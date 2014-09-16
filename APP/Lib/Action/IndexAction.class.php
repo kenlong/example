@@ -1,0 +1,268 @@
+<?php
+class IndexAction extends Action 
+{
+
+	
+	public function index()
+	{
+		echo "hello";
+	}
+		
+	public function test()
+	{
+		/*微软真垃圾,c#的webservice用这种方法不能传参数
+		$client= new SoapClient("http://wlpt.gyaip.cn/WebServices/Organ_Interface.asmx?WSDL");
+		echo "pass:".strtoupper(md5("admin"))."<br>";
+		$result = $client->EAMSGetLicense("GY-000001","admin",strtoupper(md5("admin")));
+		
+		print_r($result);
+		*/
+		
+		require_once(LIB_PATH.'\Utils\nusoap\nusoap.php');		
+		
+		//$client = new nusoap_client(LIB_PATH.'\Service\oa.wsdl', true);
+		//$client = new nusoap_client("http://wlpt.gyaip.cn:8788/WebServices/Organ_Interface.asmx?WSDL", true);
+		//$client = new nusoap_client("http://59.42.10.25:8001/Admin/WebServices/Organ_Interface.asmx?WSDL", true);
+		//$client = new nusoap_client("http://61.144.60.102:8787/admin/WebServices/Organ_Interface.asmx?WSDL", true);
+		$client = new nusoap_client("http://www.wuliucheng.com/Admin/WebServices/Organ_Interface.asmx?WSDL", true);
+		$client->soap_defencoding = 'UTF-8';   //不传递中文参数的话这行没有也行
+		$client->decode_utf8 = false; 
+		$header = "<SecurityHeader xmlns=\"http://tempuri.org/\"><UserId>US000000000</UserId></SecurityHeader>";
+		$client->setHeaders($header);
+		
+		//$params = array(
+		//    "organId"=>"GY-00000",
+		//    "userName"=>"admin",
+		//    "userPassword"=>strtoupper(md5("admin"))
+		//);
+		//$client->setHeaders();
+		//$result = $client->call('EAMSGetLicense', array('parameters' =>$params), 'http://wlpt.gyaip.cn/WebServices', 'http://wlpt.gyaip.cn/WebServices/');
+		//$result = $client->call("Login",array('username'=>'admin','password'=>strtoupper(md5("admin"))));
+		//$result = $client->call('GetAllUpdateLog', array(), '', '');
+		//$result = $client->call('GetOrginfo', array('orginid'=>'BH167'), '', '');
+		//$result = $client->call('GetDepartmentById', array('deptid'=>'00000001'), '', '');
+		
+		/*
+		$data = '<?xml version="1.0" encoding="GBK" ?><Root><Node name="Organ" id=""  ><property name="OrganName" value="物流系统测试" /><property name="ShortName" value="简称" /><property name="ParentId" value="GY-00000" /><property name="RootOrganId" value="GY-00000" /><property name="Address" value="address" /><property name="Postcode" value="code" /><property name="Tel" value="123456" /><property name="Fax" value="fax" /><property name="Email" value="email" /><property name="ContactMan" value="contaceman" /><property name="ContactTel" value="contacephone" /></Node></Root>';
+		$result = $client->call('AddOrginfo', array('orginxml'=>$data), '', '');
+		*/
+		//00000281
+		$result = $client->call('GetOrganNextLevelCode', array('rootOrganId'=>'GY-00000','parentId'=>'GY-00000'), '', '');
+		//$result = $client->call('GetDeptmentNextLevelCode', array('organId'=>'00000421','deptId'=>''), '', '');
+/*	
+$data = <<< XML
+<?xml version="1.0" encoding="GBK" ?>
+<Root>
+	<Node name="Employee" id="" >
+		<property name="OrganId" value="GY-00000" />
+		<property name="DeptId" value="00000101" />
+		<property name="PositionId" value="" />
+		<property name="EmployeeId" value="" />
+		<property name="Name" value="ken" />
+		<property name="LoginName" value="abc" />
+		<property name="Password" value="" />
+		<property name="EmployeeCode" value="" />
+		<property name="SortNum" value="0" />
+		<property name="EngageType" value="0" />
+		<property name="Mobile" value="" />
+		<property name="Status" value="0" />
+		<property name="Higher" value="" />
+		<property name="RegDate" value="2009-01-11 15:03:22" />
+		<property name="IsDelete" value="0" />
+	</Node>
+</Root>
+XML;
+*/		/*
+		$data = '<?xml version="1.0" encoding="GBK" ?><Root><Node name="Employee" id="" ><property name="OrganId" value="GY-00000" /><property name="DeptId" value="00000101" /><property name="PositionId" value="" /><property name="EmployeeId" value="" /><property name="Name" value="kenl" /><property name="LoginName" value="abc" /><property name="Password" value="4a7d1ed414474e4033ac29ccb8653d9b" /><property name="EmployeeCode" value="" /><property name="SortNum" value="0" /><property name="EngageType" value="0" /><property name="Mobile" value="" /><property name="Status" value="0" /><property name="Higher" value="" /><property name="RegDate" value="2010-2-26 21:18:18" /><property name="IsDelete" value="0" /></Node></Root>';
+		*/
+		/*
+		$data = '<?xml version="1.0" encoding="GBK" ?><Root><Node name="Employee" id="" ><property name="OrganId" value="GY-00000" /><property name="DeptId" value="00000101" /><property name="PositionId" value="" /><property name="EmployeeId" value="" /><property name="Name" value="eee" /><property name="LoginName" value="ggg" /><property name="Password" value="4a7d1ed414474e4033ac29ccb8653d9b" /><property name="EmployeeCode" value="" /><property name="SortNum" value="0" /><property name="EngageType" value="0" /><property name="Mobile" value="" /><property name="Status" value="0" /><property name="Higher" value="" /><property name="RegDate" value="2010-2-26 21:45:10" /><property name="IsDelete" value="0" /></Node></Root>';
+		*/
+		/*
+		$data = '<?xml version="1.0" encoding="GBK" ?><Root><Node name="Department" id="00000374" ><property name="OrganId" value="BH175" /><property name="DeptId" value="" /><property name="LevelCode" value="" /><property name="DeptCode" value="" /><property name="DeptName" value="bbbbbbbbbbbbbb" /><property name="ParentId" value="" /><property name="SortNum" value="0" /><property name="Tel" value="te" /><property name="Fax" value="aaaa" /><property name="Master" value="" /><property name="DeputyMaster" value="" /><property name="Leader" value="" /><property name="Intro" value="" /><property name="Virtual" value="0" /><property name="Status" value="0" /><property name="IsDelete" value="0" /></Node></Root>';
+		$result = $client->call('UpdateDepartment', array('deptxml'=>$data), '', '');
+		*/
+		/*
+		$params = array(
+		    "username"=>"admin",
+		    "password"=>strtoupper(md5("admin"))
+		);
+		
+		$result = $client->call('Login', array('parameters' =>$params), 'http://wlpt.gyaip.cn/WebServices', 'http://wlpt.gyaip.cn/WebServices/');
+		*/
+		
+		/*
+		$data = '<?xml version="1.0" encoding="GBK" ?><Root><Node name="ValidateCode" id="" ><property name="RecordId" value="" /><property name="ValidateCode" value="abcd" /><property name="CreateDate" value="2010-2-27" /><property name="ValidateDate" value="2010-2-27" /><property name="UserId" value="EM00001158" /></Node></Root>';
+		$result = $client->call('AddValidateCode', array('validatexml'=>$data), '', '');
+		*/
+		
+		
+		//$result = $client->call('GetValidateCodeByUserId',array('userId'=>"US00001225"),'','');
+		//$result = $client->call('BuildValidateCode',array('userId'=>"US00001225"),'','');
+		
+		/*
+		$client = new nusoap_client("http://localhost:16613/soapwithheader/myService.asmx?WSDL", true);
+		$client->decode_utf8 = false; 
+		
+		$header = "<MyHeader xmlns=\"http://tempuri.org/\"><UserID>admin</UserID><PassWord>admin</PassWord></MyHeader>";
+		$client->setHeaders($header);
+		
+		$result = $client->call("HelloWorld2",array("contents"=>"hw"));
+		*/
+		
+		//print_r($client);
+		
+		//$result = $client->call("GetAllUpdateLog",array());	
+
+		//$params = array("maxId"=>1285,"opertor"=>"LHK");
+		//$result = $client->call("GetNoUpdateLogId",array('parameters' =>$params), '', '');
+		
+		echo "result:<br>";
+		print_r($result);
+		
+		/*
+		echo("SOAP服务器提供的开放函数:");
+
+echo('<pre>');
+var_dump($client->__getFunctions());
+echo('</pre>');
+
+echo("SOAP服务器提供的Type:");
+
+echo('<pre>');
+var_dump($client->__getTypes());
+echo('</pre>');
+*/
+
+
+	}
+	
+	public function testwebservice()
+	{
+/*
+$request = <<<XML
+<?xml version="1.0" encoding="GB2312"?>
+<request>
+  <url>http://wlpt.gyaip.cn/WebServices/Organ_Interface.asmx?WSDL</url>
+  <fun>GetAllUpdateLog</fun>
+  <params></params>
+</request>
+XML;
+*/
+/*
+$request = <<<XML
+<?xml version="1.0" encoding="GB2312"?>
+<request>
+  <url>http://wlpt.gyaip.cn/WebServices/Organ_Interface.asmx?WSDL</url>
+  <fun>GetOrginfo</fun>
+  <params>
+   <orginid>BH167</orginid>
+  </params>
+</request>
+XML;
+*/
+/*
+$request = <<<XML
+<?xml version="1.0" encoding="gbk"?>
+<request>
+  <fun>GetUsersInfoByDept</fun>
+  <paramtype>
+  	<type></type>
+  	<name></name>
+  </paramtype>
+  <params>
+  	<organId>GY-00000</organId>
+	<deptId>00000113</deptId>
+  </params>
+</request>
+XML;
+*/
+/*
+$pass = strtoupper(md5("admin"));
+$request = <<<XML
+<?xml version='1.0' encoding='GB2312'?>
+<request>
+	<fun>EAMSGetLicense</fun>
+	<paramtype>
+		<type></type>
+		<name></name>
+	</paramtype>
+	<params>
+		<organId>GY-00000</organId>
+		<userName>admin</userName>
+		<userPassword>$pass</userPassword>
+	</params>
+</request>
+XML;
+*/
+/*
+$request = <<<XML
+<?xml version="1.0" encoding="GB2312"?>
+<request>
+  <url>http://wlpt.gyaip.cn/WebServices/Organ_Interface.asmx?WSDL</url>
+  <fun>GetOrginfoByRoot</fun>
+  <params>
+   <rootorginid>GY-00000</rootorginid>
+  </params>
+</request>
+XML;
+*/
+/*
+$request = <<<XML
+<?xml version='1.0' encoding='GBK'?>
+<request>
+<fun>GetDeptmentNextLevelCode</fun>
+<paramtype>
+<type></type>
+<name></name>
+</paramtype>
+<params>
+<organId>00000281</organId>
+<deptId></deptId>
+</params>
+</request>
+XML;
+*/
+
+$request = <<<XML
+<?xml version='1.0' encoding='GBK'?><request><fun>GetValidateCodeByUserId</fun><paramtype><type></type><name></name></paramtype><params><userId>EM00001243</userId></params></request>
+XML;
+
+		vendor("ControlService",LIB_PATH."\Service");
+		
+		$service = new ControlService();
+		
+		$result = $service->query($request);
+		//$result = $service->autoupdate();
+		
+		$result = str_replace("GBK","utf-8",$result);
+		print_r($result);
+		
+		/*
+		import("org.Date.DateUtil");
+		echo DateUtil::dateFormat('2009-12-31 23:59:59','hh:mm:ss');
+		*/
+		
+		//echo   date('Y-m-01',strtotime('2003-3-4'));
+		
+		/*
+		$weeks = array('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday');
+		$week = date('w',strtotime('2009-1-16'));
+		
+		echo $weeks[$week];
+		*/
+	}
+	
+	public function resyn()
+	{
+		vendor("ControlService",LIB_PATH."\Service");
+		
+		$service = new ControlService();
+		
+		//$result = $service->query($request);
+		//$result = $service->synNoSucceed();
+		$service->autoupdate();
+	}
+	
+}
+?>

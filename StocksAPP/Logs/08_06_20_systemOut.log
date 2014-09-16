@@ -1,0 +1,86 @@
+[ 08-06-20 11:00:13 ]
+运行后台程序:confirmInStationBK3.class
+[ 08-06-20 11:00:56 ]
+in rtn1[7]:15ZB001
+[ 08-06-20 11:00:56 ]
+in rtn2[7]:15ZB001
+[ 08-06-20 11:00:56 ]
+in code:15ZB001
+[ 08-06-20 11:00:56 ]
+box:001
+[ 08-06-20 11:01:26 ]
+in rtn1[10]:15J0101001
+[ 08-06-20 11:01:26 ]
+in rtn2[10]:15J0101001
+[ 08-06-20 11:01:26 ]
+in code:15J0101001
+[ 08-06-20 11:01:26 ]
+box:101001
+[ 08-06-20 11:13:19 ]
+运行后台程序:confirmInStationBK3.class
+[ 08-06-20 11:13:20 ]
+start confirmInStationBK3
+[ 08-06-20 11:13:54 ]
+in rtn1[7]:15ZB001
+[ 08-06-20 11:13:54 ]
+in rtn2[7]:15ZB001
+[ 08-06-20 11:13:54 ]
+in code:15ZB001
+[ 08-06-20 11:14:59 ]
+运行后台程序:confirmInStationBK3.class
+[ 08-06-20 11:14:59 ]
+start confirmInStationBK3
+[ 08-06-20 11:15:10 ]
+in rtn1[7]:15ZB001
+[ 08-06-20 11:15:10 ]
+in rtn2[7]:15ZB001
+[ 08-06-20 11:15:10 ]
+in code:15ZB001
+[ 08-06-20 11:15:10 ]
+statino:15ZB001
+[ 08-06-20 11:15:17 ]
+in rtn1[9]:15JAB9001
+[ 08-06-20 11:15:17 ]
+in rtn2[9]:15JAB9001
+[ 08-06-20 11:15:17 ]
+in code:15JAB9001
+[ 08-06-20 11:15:17 ]
+Array
+(
+)
+
+[ 08-06-20 11:15:17 ]
+update sql:UPDATE stc_currentstocks
+			           SET `station`='15ZB001'
+					 WHERE `code` ='15JAB9001'
+[ 08-06-20 11:15:29 ]
+in rtn1[9]:15JAB9002
+[ 08-06-20 11:15:29 ]
+in rtn2[9]:15JAB9002
+[ 08-06-20 11:15:29 ]
+in code:15JAB9002
+[ 08-06-20 11:15:29 ]
+Array
+(
+    [madeIn] => 湖南
+)
+
+[ 08-06-20 11:15:29 ]
+update sql:UPDATE stc_currentstocks
+			           SET `station`='15ZB001'
+					 WHERE `code` ='15JAB9002'
+[ 08-06-20 11:15:33 ]
+in rtn1[9]:15JAB9003
+[ 08-06-20 11:15:33 ]
+in rtn2[9]:15JAB9003
+[ 08-06-20 11:15:33 ]
+in code:15JAB9003
+[ 08-06-20 11:15:33 ]
+Array
+(
+)
+
+[ 08-06-20 11:15:33 ]
+update sql:UPDATE stc_currentstocks
+			           SET `station`='15ZB001'
+					 WHERE `code` ='15JAB9003'

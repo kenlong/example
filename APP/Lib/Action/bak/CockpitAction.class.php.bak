@@ -1,0 +1,123 @@
+<?php
+class CockpitAction extends Action
+{
+	public function index()
+	{
+		$company = $_REQUEST["company"];
+		$group = $_REQUEST["group"];
+		$year = $_REQUEST["year"];
+		$month = $_REQUEST["month"];
+
+//		使用session不行,这里产生一个sessionid,下面调用时又产生一个sessionid,不知道为什么
+//		Session::set("company",$company);
+//		Session::set("group",$group);
+//		Session::set("year",$year);
+//		Session::set("month",$month);
+
+		Cookie::set("company",$company);
+		Cookie::set("group",$group);
+		Cookie::set("year",$year);
+		Cookie::set("month",$month);
+	
+//		echo "$company<br>";
+//		echo "$group<br>";
+//		echo "$year<br>";
+//		echo "$month<br>";
+		
+		$this->display();
+	}
+	
+	public function request()
+	{
+//		$company = Session::get("company");
+//		$group = Session::get("group");
+//		$year = Session::get("year");
+//		$month = Session::get("month");
+		
+		$company = Cookie::get("company");
+		$group = Cookie::get("group");
+		$year = Cookie::get("year");
+		$month = Cookie::get("month");
+		
+//		$company = '101';
+//		$group = '10101';
+//		$year = '2011';
+//		$month = '01';
+		
+//		echo "$company<br>";
+//		echo "$group<br>";
+//		echo "$year<br>";
+//		echo "$month<br>";
+		
+		if(!$company || !$group)
+		{
+			print_r($this->createResult(''));
+		}
+		else 
+		{
+			//计算销售收入,成本,及环比增长量
+			$model = new DeptModel();
+			$sql = "select sum(money) as income, sum(cost) as cost from airwaybill,dept where airwaybill.deptno = dept.deptno and dept.groups = '$group'";
+			
+			$result = $model->query($sql);
+			$income = $result[0]["income"];
+			$cost = $result[0]["cost"];
+			$profit = $income - $cost ;
+			$unit1 = "元";
+			
+			if($income/1000 >= 10)
+			{
+				$unit1 = "万元";
+				$profit = round($profit/10000,2);
+				$income = round($income/10000,0);
+			}
+			else 
+			{
+				$income = round($income,0);
+				$profit = round($profit,2);
+			}
+			
+			//计算资金流量,应收款,及环比增长量
+			$sql = "select Liquidity from Dept where DeptNo = '$group'";
+			$result = $model->query($sql);
+						
+			$liquidity = $result[0]["Liquidity"];
+			
+			$sql = "select sum(iaccount) as account from airwaybill,dept where airwaybill.deptno = dept.deptno and dept.groups = '$group' and iaccount <> 0 and geted <> 1  ";
+			$result = $model->query($sql);
+			$account = $result[0]["account"];			
+			$unit2 = "元";
+			
+			if(!$liquidity)
+				$liquidity = $account ;
+			
+			if($liquidity/10000 >= 10 )
+			{
+				$unit2 = "万元";
+				$liquidity = round($liquidity/10000,0);
+				$account = round($account/10000,2);
+			}
+			else 
+			{
+				$liquidity = round($liquidity,0);
+				$account = round($account,2);
+			}
+			
+			$result =  "<income><unit>$unit1</unit><a>$income</a><b>$profit</b><c>0</c></income>";
+			$result .= "<account><unit>$unit2</unit><a>$liquidity</a><b>$account</b><c>0</c></account>";
+			
+			print_r($this->createResult($result));
+		}
+	}
+	
+	private function createResult($data)
+	{
+		$result  = "<?xml version='1.0' encoding='UTF-8'?>";
+		$result .= "<result>$data</result>";
+		
+		return $result;
+	}
+	
+}
+
+?>

@@ -1,0 +1,2 @@
+set ws=wscript.createobject("wscript.shell")
+ws.run "autosynguoyao.bat /start",0

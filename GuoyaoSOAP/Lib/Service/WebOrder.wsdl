@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://soap.wsamsara.com/gysoap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="WebOrder" targetNamespace="http://soap.wsamsara.com/gysoap/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://soap.wsamsara.com/gysoap/">
+      <xsd:element name="login">
+        <xsd:complexType>
+          <xsd:sequence>
+          	<xsd:element name="userID" type="xsd:string" />
+          	<xsd:element name="userPass" type="xsd:string"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="loginResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="loginResult" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+       
+    
+      <xsd:complexType name="OrderHead">
+      	<xsd:sequence>
+      		<xsd:element name="OrderNo" type="xsd:string"></xsd:element>
+      		<xsd:element name="Shipper" type="xsd:string"></xsd:element>
+      		<xsd:element name="ShipperName" type="xsd:string"></xsd:element>
+      		<xsd:element name="ShipperPhone" type="xsd:string"></xsd:element>
+      		<xsd:element name="ShipperAddress" type="xsd:string"></xsd:element>
+      		<xsd:element name="Consignee" type="xsd:string"></xsd:element>
+      		<xsd:element name="ConsigneeName" type="xsd:string"></xsd:element>
+      		<xsd:element name="ConsigneePhone" type="xsd:string"></xsd:element>
+      		<xsd:element name="ConsigneeAddress" type="xsd:string"></xsd:element>
+
+      		<xsd:element name="DeliveryType" type="xsd:string"></xsd:element>
+      		<xsd:element name="GoodsName" type="xsd:string"></xsd:element>
+      		<xsd:element name="Package" type="xsd:string"></xsd:element>
+      		<xsd:element name="QTY" type="xsd:int"></xsd:element>
+
+      		<xsd:element name="Weight" type="xsd:double"></xsd:element>
+      		<xsd:element name="Invoice" type="xsd:int"></xsd:element>
+      		<xsd:element name="Information" type="xsd:string"></xsd:element>
+      		<xsd:element name="Transporttype" type="xsd:string"></xsd:element>
+      		<xsd:element name="DeclareValue" type="xsd:double"></xsd:element>
+      		<xsd:element name="SendFax" type="xsd:int"></xsd:element>
+      		<xsd:element name="RequirementDate" type="xsd:string"></xsd:element>
+      		<xsd:element name="RequirementTime" type="xsd:string"></xsd:element>
+      		<xsd:element name="Operator" type="xsd:string"></xsd:element>
+      		<xsd:element name="OperateDate" type="xsd:string"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="OrderDetail">
+      	<xsd:sequence>
+      		<xsd:element name="BusinessNo" type="xsd:string"></xsd:element>
+      		<xsd:element name="GoodsName" type="xsd:string"></xsd:element>
+
+      		<xsd:element name="QTY" type="xsd:int"></xsd:element>
+      		<xsd:element name="Weight" type="xsd:double"></xsd:element>
+      		<xsd:element name="Unit" type="xsd:string"></xsd:element>
+      		<xsd:element name="StorageRequirement"
+      			type="xsd:string">
+      		</xsd:element>
+      		<xsd:element name="QTYPerUnit" type="xsd:int"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+    
+      <xsd:complexType name="ArrayOfOrderDetail">
+      	<xsd:sequence>
+      		<xsd:element name="OrderDetail" type="tns:OrderDetail" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>    
+      <xsd:complexType name="Order">
+      	<xsd:sequence>
+      		<xsd:element name="OrderHead" type="tns:OrderHead"></xsd:element>
+      		<xsd:element name="OrderDetail" type="tns:ArrayOfOrderDetail"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="cancelOrder">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="userID" type="xsd:string"></xsd:element>
+      			<xsd:element name="ticket" type="xsd:string"></xsd:element>
+      			<xsd:element name="OrderNo" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="cancelOrderResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="cancelOrderResult" type="xsd:int"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="saveOrder">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="userID" type="xsd:string"></xsd:element>
+      			<xsd:element name="ticket" type="xsd:string"></xsd:element>
+      			<xsd:element name="order" type="tns:Order"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="saveOrderResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="saveOrderResult" type="xsd:int"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="queryTrack">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="userID" type="xsd:string"></xsd:element>
+      			<xsd:element name="ticket" type="xsd:string"></xsd:element>
+      			<xsd:element name="orderNo" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="queryTrackResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="queryTrackResult" type="tns:BillTrack"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+    
+      <xsd:complexType name="BillTrackHead">
+      	<xsd:sequence>
+      		<xsd:element name="Picture" type="xsd:string"></xsd:element>
+      		<xsd:element name="PickupDate" type="xsd:string"></xsd:element>
+      		<xsd:element name="BillDate" type="xsd:string"></xsd:element>
+      		<xsd:element name="BillNo" type="xsd:string"></xsd:element>
+      		<xsd:element name="TransNo" type="xsd:string"></xsd:element>
+      		<xsd:element name="OrderNo" type="xsd:string"></xsd:element>
+      		<xsd:element name="TrainNo" type="xsd:string"></xsd:element>
+      		<xsd:element name="TrainDate" type="xsd:string"></xsd:element>
+      		<xsd:element name="Estimated" type="xsd:string"></xsd:element>
+      		<xsd:element name="Signer" type="xsd:string"></xsd:element>
+      		<xsd:element name="SignDate" type="xsd:string"></xsd:element>
+      		<xsd:element name="Delay" type="xsd:string"></xsd:element>
+      		<xsd:element name="SignBillReturnDate"
+      			type="xsd:string">
+      		</xsd:element>
+      		<xsd:element name="Accident" type="xsd:string"></xsd:element>
+      		<xsd:element name="ReturnBack" type="xsd:string"></xsd:element>
+
+                    <xsd:element name="ReturnDate" type="xsd:string"></xsd:element>
+                    <xsd:element name="ReturnBackTime" type="xsd:string"></xsd:element>
+      		<xsd:element name="Amount" type="xsd:string"></xsd:element>
+      		<xsd:element name="PickupPhone" type="xsd:string"></xsd:element>
+      		<xsd:element name="NetWeight" type="xsd:string"></xsd:element>
+      		<xsd:element name="Shipper" type="xsd:string"></xsd:element>
+      		<xsd:element name="Consignee" type="xsd:string"></xsd:element>
+      		<xsd:element name="Destination" type="xsd:string"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="BillTrackDetail">
+      	<xsd:sequence>
+      		<xsd:element name="TrackTime" type="xsd:string"></xsd:element>
+
+      		<xsd:element name="Tracker" type="xsd:string"></xsd:element>
+      		<xsd:element name="Info" type="xsd:string"></xsd:element>
+
+      		<xsd:element name="Dept" type="xsd:string"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+
+      <xsd:complexType name="ArrayOfBillTrackDetail">
+      	<xsd:sequence>
+      		<xsd:element name="TrackDetail" type="tns:BillTrackDetail" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+    
+      <xsd:complexType name="BillTrack">
+      	<xsd:sequence>
+      		<xsd:element name="Result" type="xsd:int"></xsd:element>
+      		<xsd:element name="BillTrackHead"
+      			type="tns:BillTrackHead">
+      		</xsd:element>
+      		<xsd:element name="BillTrackDetail"
+      			type="tns:ArrayOfBillTrackDetail">
+      		</xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="loginRequest">
+    <wsdl:part element="tns:login" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="loginResponse">
+    <wsdl:part element="tns:loginResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="cancelOrderRequest">
+  	<wsdl:part name="parameters" element="tns:cancelOrder"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cancelOrderResponse">
+  	<wsdl:part name="parameters" element="tns:cancelOrderResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="saveOrderRequest">
+  	<wsdl:part name="parameters" element="tns:saveOrder"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="saveOrderResponse">
+  	<wsdl:part name="parameters" element="tns:saveOrderResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="queryTrackRequest">
+  	<wsdl:part name="parameters" element="tns:queryTrack"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="queryTrackResponse">
+  	<wsdl:part name="parameters" element="tns:queryTrackResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="WebOrderService">
+    <wsdl:operation name="login">
+      <wsdl:input message="tns:loginRequest"/>
+      <wsdl:output message="tns:loginResponse"/>
+    </wsdl:operation>
+
+    <wsdl:operation name="cancelOrder">
+    	<wsdl:input message="tns:cancelOrderRequest"></wsdl:input>
+    	<wsdl:output message="tns:cancelOrderResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="saveOrder">
+    	<wsdl:input message="tns:saveOrderRequest"></wsdl:input>
+    	<wsdl:output message="tns:saveOrderResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="queryTrack">
+    	<wsdl:input message="tns:queryTrackRequest"></wsdl:input>
+    	<wsdl:output message="tns:queryTrackResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebOrderSOAP" type="tns:WebOrderService">
+
+  	<soap:binding style="document"
+  		transport="http://schemas.xmlsoap.org/soap/http" />
+  	<wsdl:operation name="login">
+
+  		<soap:operation
+  			soapAction="http://soap.wsamsara.com/gysoap/login" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+
+  	<wsdl:operation name="cancelOrder">
+
+  		<soap:operation
+  			soapAction="http://soap.wsamsara.com/gysoap/cancelOrder" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="saveOrder">
+
+  		<soap:operation
+  			soapAction="http://soap.wsamsara.com/gysoap/saveOrder" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="queryTrack">
+  		<soap:operation
+  			soapAction="http://soap.wsamsara.com/gysoap/queryTrack" />
+  		<wsdl:input>
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebOrder">
+    <wsdl:port binding="tns:WebOrderSOAP" name="WebOrderSOAP">
+      <soap:address location="http://192.168.1.10/websit/gysoap/weborder.php"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

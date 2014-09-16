@@ -1,0 +1,2463 @@
+[ 2014-05-05T13:32:37+08:00 ] NOTIC: [8] Use of undefined constant GROUP_NAME - assumed 'GROUP_NAME' App.class.php 第 360 行.
+[ 2014-05-05T13:32:37+08:00 ] NOTIC: [2048] Assigning the return value of new by reference is deprecated nusoap.php 第 7381 行.
+[ 2014-05-05T13:32:37+08:00 ] NOTIC: [2048] Creating default object from empty value nusoap.php 第 75 行.
+[ 2014-05-05T13:32:54+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:54+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:54+08:00 ] SQL:  RunTime:0.009854s SQL = SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'web_order'
+[ 2014-05-05T13:32:54+08:00 ] SQL:  RunTime:0.001140s SQL = SELECT  * FROM web_order WHERE orderNo = 'G01140504102'
+[ 2014-05-05T13:32:54+08:00 ] SQL:  RunTime:0.021045s SQL = UPDATE web_order SET orderNo='G01140504102',billDate='2014-05-04 13:20:32',userId='000032',userName='黄穗',departure='',client='国药控股广州有限公司',clientName='(国药集团)高唐库',clientPhone='',clientMobile='',clientAddress='广东省-广州市-天河区-高唐工业园高普路91号',destination='',consignee='广州市白云区人民医院',consigneeName='',consigneePhone='',consigneeMobile='',consigneeAddress='广东省-广州市-天河区-广州市沙河龙岗路64号',goods='药品',qty=78,weight=0,cubage=0,package='纸箱',payType='月结',declareValue=0,insuranceValue=0,getMoney=0,transtype='汽运',deliverType='零担',signBackType='',receipt=0,receiptPhone=null,receiptAddress=null,receiptTime=null,requirementDate='2014-05-05 09:33:00',requirementTime='2014-05-05 09:33:00',addition=0,notice='0.0',sendFax=0,company='000032',sysdno=null,synupsign=0 WHERE id='88745'
+[ 2014-05-05T13:32:54+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 116 行.
+[ 2014-05-05T13:32:54+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 119 行.
+[ 2014-05-05T13:32:54+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 575 行.
+[ 2014-05-05T13:32:54+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 577 行.
+[ 2014-05-05T13:32:54+08:00 ] ERR: 
+[ 2014-05-05T13:32:54+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 578 行.
+[ 2014-05-05T13:32:54+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:54+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:54+08:00 ] SQL:  RunTime:0.013423s SQL = SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'web_order'
+[ 2014-05-05T13:32:54+08:00 ] SQL:  RunTime:0.001928s SQL = SELECT  * FROM web_order WHERE orderNo = 'G01140504102'
+[ 2014-05-05T13:32:54+08:00 ] SQL:  RunTime:0.015615s SQL = UPDATE web_order SET orderNo='G01140504102',billDate='2014-05-04 13:20:32',userId='000032',userName='黄穗',departure='',client='国药控股广州有限公司',clientName='(国药集团)高唐库',clientPhone='',clientMobile='',clientAddress='广东省-广州市-天河区-高唐工业园高普路91号',destination='',consignee='广州市白云区人民医院',consigneeName='',consigneePhone='',consigneeMobile='',consigneeAddress='广东省-广州市-天河区-广州市沙河龙岗路64号',goods='药品',qty=78,weight=0,cubage=0,package='纸箱',payType='月结',declareValue=0,insuranceValue=0,getMoney=0,transtype='汽运',deliverType='零担',signBackType='',receipt=0,receiptPhone=null,receiptAddress=null,receiptTime=null,requirementDate='2014-05-05 09:33:00',requirementTime='2014-05-05 09:33:00',addition=0,notice='0.0',sendFax=0,company='000032',sysdno=null,synupsign=0 WHERE id='88745'
+[ 2014-05-05T13:32:54+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 116 行.
+[ 2014-05-05T13:32:54+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 119 行.
+[ 2014-05-05T13:32:54+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 575 行.
+[ 2014-05-05T13:32:54+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 577 行.
+[ 2014-05-05T13:32:54+08:00 ] ERR: 
+[ 2014-05-05T13:32:54+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 578 行.
+[ 2014-05-05T13:32:54+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:54+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:54+08:00 ] SQL:  RunTime:0.022039s SQL = SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'web_order'
+[ 2014-05-05T13:32:54+08:00 ] SQL:  RunTime:0.001866s SQL = SELECT  * FROM web_order WHERE orderNo = 'G01140505001'
+[ 2014-05-05T13:32:54+08:00 ] SQL:  RunTime:0.023837s SQL = UPDATE web_order SET orderNo='G01140505001',billDate='2014-05-05 08:17:08',userId='000032',userName='王彦岭',departure='',client='国药控股广州有限公司',clientName='(国药集团)高唐库',clientPhone='',clientMobile='',clientAddress='广东省-广州市-天河区-高唐工业园高普路91号',destination='',consignee='广东金康药房连锁有限公司',consigneeName='',consigneePhone='',consigneeMobile='',consigneeAddress='广东省-广州市-海珠区-【返】广州市海珠区工业大道凤岗路38号201、301号',goods='药品',qty=72,weight=0,cubage=0,package='纸箱',payType='月结',declareValue=0,insuranceValue=0,getMoney=0,transtype='汽运',deliverType='整车',signBackType='',receipt=0,receiptPhone=null,receiptAddress=null,receiptTime=null,addition=0,notice='0.0',sendFax=0,company='000032',sysdno='000032001-D1405050001',synupsign=0 WHERE id='88747'
+[ 2014-05-05T13:32:54+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 116 行.
+[ 2014-05-05T13:32:54+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 119 行.
+[ 2014-05-05T13:32:54+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 575 行.
+[ 2014-05-05T13:32:54+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 577 行.
+[ 2014-05-05T13:32:54+08:00 ] ERR: 
+[ 2014-05-05T13:32:54+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 578 行.
+[ 2014-05-05T13:32:54+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:54+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:55+08:00 ] SQL:  RunTime:0.021845s SQL = SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'web_order'
+[ 2014-05-05T13:32:55+08:00 ] SQL:  RunTime:0.001971s SQL = SELECT  * FROM web_order WHERE orderNo = 'G01140504102'
+[ 2014-05-05T13:32:55+08:00 ] SQL:  RunTime:0.011438s SQL = UPDATE web_order SET orderNo='G01140504102',billDate='2014-05-04 13:20:32',userId='000032',userName='黄穗',departure='',client='国药控股广州有限公司',clientName='(国药集团)高唐库',clientPhone='',clientMobile='',clientAddress='广东省-广州市-天河区-高唐工业园高普路91号',destination='',consignee='广州市白云区人民医院',consigneeName='',consigneePhone='',consigneeMobile='',consigneeAddress='广东省-广州市-天河区-广州市沙河龙岗路64号',goods='药品',qty=78,weight=0,cubage=0,package='纸箱',payType='月结',declareValue=0,insuranceValue=0,getMoney=0,transtype='汽运',deliverType='零担',signBackType='',receipt=0,receiptPhone=null,receiptAddress=null,receiptTime=null,requirementDate='2014-05-05 09:33:00',requirementTime='2014-05-05 09:33:00',addition=0,notice='0.0',sendFax=0,company='000032',sysdno=null,synupsign=0 WHERE id='88745'
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 116 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 119 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 575 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 577 行.
+[ 2014-05-05T13:32:55+08:00 ] ERR: 
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 578 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:55+08:00 ] SQL:  RunTime:0.025620s SQL = SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'web_order'
+[ 2014-05-05T13:32:55+08:00 ] SQL:  RunTime:0.001727s SQL = SELECT  * FROM web_order WHERE orderNo = 'G01140505001'
+[ 2014-05-05T13:32:55+08:00 ] SQL:  RunTime:0.007282s SQL = UPDATE web_order SET orderNo='G01140505001',billDate='2014-05-05 08:17:08',userId='000032',userName='王彦岭',departure='',client='国药控股广州有限公司',clientName='(国药集团)高唐库',clientPhone='',clientMobile='',clientAddress='广东省-广州市-天河区-高唐工业园高普路91号',destination='',consignee='广东金康药房连锁有限公司',consigneeName='',consigneePhone='',consigneeMobile='',consigneeAddress='广东省-广州市-海珠区-【返】广州市海珠区工业大道凤岗路38号201、301号',goods='药品',qty=72,weight=0,cubage=0,package='纸箱',payType='月结',declareValue=0,insuranceValue=0,getMoney=0,transtype='汽运',deliverType='整车',signBackType='',receipt=0,receiptPhone=null,receiptAddress=null,receiptTime=null,addition=0,notice='0.0',sendFax=0,company='000032',sysdno='000032001-D1405050001',synupsign=0 WHERE id='88747'
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 116 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 119 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 575 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 577 行.
+[ 2014-05-05T13:32:55+08:00 ] ERR: 
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 578 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:55+08:00 ] SQL:  RunTime:0.024351s SQL = SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'web_order'
+[ 2014-05-05T13:32:55+08:00 ] SQL:  RunTime:0.001702s SQL = SELECT  * FROM web_order WHERE orderNo = 'G01140504085'
+[ 2014-05-05T13:32:55+08:00 ] SQL:  RunTime:0.009111s SQL = UPDATE web_order SET orderNo='G01140504085',billDate='2014-05-04 13:20:02',userId='000032',userName='黄穗',departure='',client='国药控股广州有限公司',clientName='(国药集团)高唐库',clientPhone='',clientMobile='',clientAddress='广东省-广州市-天河区-高唐工业园高普路91号',destination='',consignee='南沙区横沥镇社区卫生服务中心',consigneeName='',consigneePhone='',consigneeMobile='',consigneeAddress='广东省-广州市-南沙区-广州市南沙区横沥镇冯马三村委会',goods='药品',qty=247,weight=0,cubage=0,package='纸箱',payType='月结',declareValue=0,insuranceValue=0,getMoney=0,transtype='汽运',deliverType='零担',signBackType='',receipt=0,receiptPhone=null,receiptAddress=null,receiptTime=null,requirementDate='2014-05-05 09:33:00',requirementTime='2014-05-05 09:33:00',addition=0,notice='0.0',sendFax=0,company='000032',sysdno=null,synupsign=0 WHERE id='88741'
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 116 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 119 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 575 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 577 行.
+[ 2014-05-05T13:32:55+08:00 ] ERR: 
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 578 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:55+08:00 ] SQL:  RunTime:0.022776s SQL = SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'web_order'
+[ 2014-05-05T13:32:55+08:00 ] SQL:  RunTime:0.001895s SQL = SELECT  * FROM web_order WHERE orderNo = 'G01140504102'
+[ 2014-05-05T13:32:55+08:00 ] SQL:  RunTime:0.015949s SQL = UPDATE web_order SET orderNo='G01140504102',billDate='2014-05-04 13:20:32',userId='000032',userName='黄穗',departure='',client='国药控股广州有限公司',clientName='(国药集团)高唐库',clientPhone='',clientMobile='',clientAddress='广东省-广州市-天河区-高唐工业园高普路91号',destination='',consignee='广州市白云区人民医院',consigneeName='',consigneePhone='',consigneeMobile='',consigneeAddress='广东省-广州市-天河区-广州市沙河龙岗路64号',goods='药品',qty=78,weight=0,cubage=0,package='纸箱',payType='月结',declareValue=0,insuranceValue=0,getMoney=0,transtype='汽运',deliverType='零担',signBackType='',receipt=0,receiptPhone=null,receiptAddress=null,receiptTime=null,requirementDate='2014-05-05 09:33:00',requirementTime='2014-05-05 09:33:00',addition=0,notice='0.0',sendFax=0,company='000032',sysdno=null,synupsign=0 WHERE id='88745'
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 116 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 119 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 575 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 577 行.
+[ 2014-05-05T13:32:55+08:00 ] ERR: 
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 578 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:55+08:00 ] SQL:  RunTime:0.021928s SQL = SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'web_order'
+[ 2014-05-05T13:32:55+08:00 ] SQL:  RunTime:0.001696s SQL = SELECT  * FROM web_order WHERE orderNo = 'G01140505001'
+[ 2014-05-05T13:32:55+08:00 ] SQL:  RunTime:0.008638s SQL = UPDATE web_order SET orderNo='G01140505001',billDate='2014-05-05 08:17:08',userId='000032',userName='王彦岭',departure='',client='国药控股广州有限公司',clientName='(国药集团)高唐库',clientPhone='',clientMobile='',clientAddress='广东省-广州市-天河区-高唐工业园高普路91号',destination='',consignee='广东金康药房连锁有限公司',consigneeName='',consigneePhone='',consigneeMobile='',consigneeAddress='广东省-广州市-海珠区-【返】广州市海珠区工业大道凤岗路38号201、301号',goods='药品',qty=72,weight=0,cubage=0,package='纸箱',payType='月结',declareValue=0,insuranceValue=0,getMoney=0,transtype='汽运',deliverType='整车',signBackType='',receipt=0,receiptPhone=null,receiptAddress=null,receiptTime=null,addition=0,notice='0.0',sendFax=0,company='000032',sysdno='000032001-D1405050001',synupsign=0 WHERE id='88747'
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 116 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 119 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 575 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 577 行.
+[ 2014-05-05T13:32:55+08:00 ] ERR: 
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 578 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:55+08:00 ] SQL:  RunTime:0.021885s SQL = SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'web_order'
+[ 2014-05-05T13:32:55+08:00 ] SQL:  RunTime:0.001727s SQL = SELECT  * FROM web_order WHERE orderNo = 'G01140504085'
+[ 2014-05-05T13:32:55+08:00 ] SQL:  RunTime:0.006380s SQL = UPDATE web_order SET orderNo='G01140504085',billDate='2014-05-04 13:20:02',userId='000032',userName='黄穗',departure='',client='国药控股广州有限公司',clientName='(国药集团)高唐库',clientPhone='',clientMobile='',clientAddress='广东省-广州市-天河区-高唐工业园高普路91号',destination='',consignee='南沙区横沥镇社区卫生服务中心',consigneeName='',consigneePhone='',consigneeMobile='',consigneeAddress='广东省-广州市-南沙区-广州市南沙区横沥镇冯马三村委会',goods='药品',qty=247,weight=0,cubage=0,package='纸箱',payType='月结',declareValue=0,insuranceValue=0,getMoney=0,transtype='汽运',deliverType='零担',signBackType='',receipt=0,receiptPhone=null,receiptAddress=null,receiptTime=null,requirementDate='2014-05-05 09:33:00',requirementTime='2014-05-05 09:33:00',addition=0,notice='0.0',sendFax=0,company='000032',sysdno=null,synupsign=0 WHERE id='88741'
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 116 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 119 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 575 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 577 行.
+[ 2014-05-05T13:32:55+08:00 ] ERR: 
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 578 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:55+08:00 ] SQL:  RunTime:0.022398s SQL = SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'web_order'
+[ 2014-05-05T13:32:55+08:00 ] SQL:  RunTime:0.001763s SQL = SELECT  * FROM web_order WHERE orderNo = 'G01140504088'
+[ 2014-05-05T13:32:55+08:00 ] SQL:  RunTime:0.004845s SQL = UPDATE web_order SET orderNo='G01140504088',billDate='2014-05-04 13:20:06',userId='000032',userName='黄穗',departure='',client='国药控股广州有限公司',clientName='(国药集团)高唐库',clientPhone='',clientMobile='',clientAddress='广东省-广州市-天河区-高唐工业园高普路91号',destination='',consigneeMobile='',consigneeAddress='广东省-深圳市-宝安区-龙华街道建辉路123号',goods='药品',qty=212,weight=0,cubage=0,package='纸箱',payType='月结',declareValue=0,insuranceValue=0,getMoney=0,transtype='汽运',deliverType='零担',signBackType='',receipt=0,receiptPhone=null,receiptAddress=null,receiptTime=null,requirementDate='2014-05-05 09:33:00',requirementTime='2014-05-05 09:33:00',addition=0,notice='0.0',sendFax=0,company='000032',sysdno=null,synupsign=0 WHERE id='88743'
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 116 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 119 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 575 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 577 行.
+[ 2014-05-05T13:32:55+08:00 ] ERR: 
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 578 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:55+08:00 ] SQL:  RunTime:0.022348s SQL = SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'web_order'
+[ 2014-05-05T13:32:55+08:00 ] SQL:  RunTime:0.000740s SQL = SELECT  * FROM web_order WHERE orderNo = 'G01140504102'
+[ 2014-05-05T13:32:55+08:00 ] SQL:  RunTime:0.022629s SQL = UPDATE web_order SET orderNo='G01140504102',billDate='2014-05-04 13:20:32',userId='000032',userName='黄穗',departure='',client='国药控股广州有限公司',clientName='(国药集团)高唐库',clientPhone='',clientMobile='',clientAddress='广东省-广州市-天河区-高唐工业园高普路91号',destination='',consignee='广州市白云区人民医院',consigneeName='',consigneePhone='',consigneeMobile='',consigneeAddress='广东省-广州市-天河区-广州市沙河龙岗路64号',goods='药品',qty=78,weight=0,cubage=0,package='纸箱',payType='月结',declareValue=0,insuranceValue=0,getMoney=0,transtype='汽运',deliverType='零担',signBackType='',receipt=0,receiptPhone=null,receiptAddress=null,receiptTime=null,requirementDate='2014-05-05 09:33:00',requirementTime='2014-05-05 09:33:00',addition=0,notice='0.0',sendFax=0,company='000032',sysdno=null,synupsign=0 WHERE id='88745'
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 116 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 119 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 575 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 577 行.
+[ 2014-05-05T13:32:55+08:00 ] ERR: 
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 578 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:55+08:00 ] SQL:  RunTime:0.009020s SQL = SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'web_order'
+[ 2014-05-05T13:32:55+08:00 ] SQL:  RunTime:0.000725s SQL = SELECT  * FROM web_order WHERE orderNo = 'G01140505001'
+[ 2014-05-05T13:32:55+08:00 ] SQL:  RunTime:0.003985s SQL = UPDATE web_order SET orderNo='G01140505001',billDate='2014-05-05 08:17:08',userId='000032',userName='王彦岭',departure='',client='国药控股广州有限公司',clientName='(国药集团)高唐库',clientPhone='',clientMobile='',clientAddress='广东省-广州市-天河区-高唐工业园高普路91号',destination='',consignee='广东金康药房连锁有限公司',consigneeName='',consigneePhone='',consigneeMobile='',consigneeAddress='广东省-广州市-海珠区-【返】广州市海珠区工业大道凤岗路38号201、301号',goods='药品',qty=72,weight=0,cubage=0,package='纸箱',payType='月结',declareValue=0,insuranceValue=0,getMoney=0,transtype='汽运',deliverType='整车',signBackType='',receipt=0,receiptPhone=null,receiptAddress=null,receiptTime=null,addition=0,notice='0.0',sendFax=0,company='000032',sysdno='000032001-D1405050001',synupsign=0 WHERE id='88747'
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 116 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 119 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 575 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 577 行.
+[ 2014-05-05T13:32:55+08:00 ] ERR: 
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 578 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:55+08:00 ] SQL:  RunTime:0.009064s SQL = SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'web_order'
+[ 2014-05-05T13:32:55+08:00 ] SQL:  RunTime:0.000687s SQL = SELECT  * FROM web_order WHERE orderNo = 'G01140504085'
+[ 2014-05-05T13:32:55+08:00 ] SQL:  RunTime:0.013849s SQL = UPDATE web_order SET orderNo='G01140504085',billDate='2014-05-04 13:20:02',userId='000032',userName='黄穗',departure='',client='国药控股广州有限公司',clientName='(国药集团)高唐库',clientPhone='',clientMobile='',clientAddress='广东省-广州市-天河区-高唐工业园高普路91号',destination='',consignee='南沙区横沥镇社区卫生服务中心',consigneeName='',consigneePhone='',consigneeMobile='',consigneeAddress='广东省-广州市-南沙区-广州市南沙区横沥镇冯马三村委会',goods='药品',qty=247,weight=0,cubage=0,package='纸箱',payType='月结',declareValue=0,insuranceValue=0,getMoney=0,transtype='汽运',deliverType='零担',signBackType='',receipt=0,receiptPhone=null,receiptAddress=null,receiptTime=null,requirementDate='2014-05-05 09:33:00',requirementTime='2014-05-05 09:33:00',addition=0,notice='0.0',sendFax=0,company='000032',sysdno=null,synupsign=0 WHERE id='88741'
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 116 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 119 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 575 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 577 行.
+[ 2014-05-05T13:32:55+08:00 ] ERR: 
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 578 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:55+08:00 ] SQL:  RunTime:0.008877s SQL = SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'web_order'
+[ 2014-05-05T13:32:55+08:00 ] SQL:  RunTime:0.000769s SQL = SELECT  * FROM web_order WHERE orderNo = 'G01140504088'
+[ 2014-05-05T13:32:55+08:00 ] SQL:  RunTime:0.003601s SQL = UPDATE web_order SET orderNo='G01140504088',billDate='2014-05-04 13:20:06',userId='000032',userName='黄穗',departure='',client='国药控股广州有限公司',clientName='(国药集团)高唐库',clientPhone='',clientMobile='',clientAddress='广东省-广州市-天河区-高唐工业园高普路91号',destination='',consigneeMobile='',consigneeAddress='广东省-深圳市-宝安区-龙华街道建辉路123号',goods='药品',qty=212,weight=0,cubage=0,package='纸箱',payType='月结',declareValue=0,insuranceValue=0,getMoney=0,transtype='汽运',deliverType='零担',signBackType='',receipt=0,receiptPhone=null,receiptAddress=null,receiptTime=null,requirementDate='2014-05-05 09:33:00',requirementTime='2014-05-05 09:33:00',addition=0,notice='0.0',sendFax=0,company='000032',sysdno=null,synupsign=0 WHERE id='88743'
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 116 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 119 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 575 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 577 行.
+[ 2014-05-05T13:32:55+08:00 ] ERR: 
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 578 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:55+08:00 ] SQL:  RunTime:0.008989s SQL = SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'web_order'
+[ 2014-05-05T13:32:55+08:00 ] SQL:  RunTime:0.000700s SQL = SELECT  * FROM web_order WHERE orderNo = 'G01140504153'
+[ 2014-05-05T13:32:55+08:00 ] SQL:  RunTime:0.004163s SQL = UPDATE web_order SET orderNo='G01140504153',billDate='2014-05-04 15:02:07',userId='000032',userName='黄穗',departure='',client='国药控股广州有限公司',clientName='(国药集团)高唐库',clientPhone='',clientMobile='',clientAddress='广东省-广州市-天河区-高唐工业园高普路91号',destination='',consignee='广州采芝林药业有限公司',consigneeName='',consigneePhone='',consigneeMobile='',consigneeAddress='广东省-广州市-荔湾区-【返】芳村塞坝口36号市药材仓库',goods='药品',qty=617,weight=0,cubage=0,package='纸箱',payType='月结',declareValue=0,insuranceValue=0,getMoney=0,transtype='汽运',deliverType='零担',signBackType='',receipt=0,receiptPhone=null,receiptAddress=null,receiptTime=null,requirementDate='2014-05-05 09:33:00',requirementTime='2014-05-05 09:33:00',addition=0,notice='0.0',sendFax=0,company='000032',sysdno=null,synupsign=0 WHERE id='88746'
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 116 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 119 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 575 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 577 行.
+[ 2014-05-05T13:32:55+08:00 ] ERR: 
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 578 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:55+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:55+08:00 ] SQL:  RunTime:0.009223s SQL = SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'web_order'
+[ 2014-05-05T13:32:56+08:00 ] SQL:  RunTime:0.000724s SQL = SELECT  * FROM web_order WHERE orderNo = 'G01140504102'
+[ 2014-05-05T13:32:56+08:00 ] SQL:  RunTime:0.002610s SQL = UPDATE web_order SET orderNo='G01140504102',billDate='2014-05-04 13:20:32',userId='000032',userName='黄穗',departure='',client='国药控股广州有限公司',clientName='(国药集团)高唐库',clientPhone='',clientMobile='',clientAddress='广东省-广州市-天河区-高唐工业园高普路91号',destination='',consignee='广州市白云区人民医院',consigneeName='',consigneePhone='',consigneeMobile='',consigneeAddress='广东省-广州市-天河区-广州市沙河龙岗路64号',goods='药品',qty=78,weight=0,cubage=0,package='纸箱',payType='月结',declareValue=0,insuranceValue=0,getMoney=0,transtype='汽运',deliverType='零担',signBackType='',receipt=0,receiptPhone=null,receiptAddress=null,receiptTime=null,requirementDate='2014-05-05 09:33:00',requirementTime='2014-05-05 09:33:00',addition=0,notice='0.0',sendFax=0,company='000032',sysdno=null,synupsign=0 WHERE id='88745'
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 116 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 119 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 575 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 577 行.
+[ 2014-05-05T13:32:56+08:00 ] ERR: 
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 578 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:56+08:00 ] SQL:  RunTime:0.009211s SQL = SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'web_order'
+[ 2014-05-05T13:32:56+08:00 ] SQL:  RunTime:0.000858s SQL = SELECT  * FROM web_order WHERE orderNo = 'G01140505001'
+[ 2014-05-05T13:32:56+08:00 ] SQL:  RunTime:0.008560s SQL = UPDATE web_order SET orderNo='G01140505001',billDate='2014-05-05 08:17:08',userId='000032',userName='王彦岭',departure='',client='国药控股广州有限公司',clientName='(国药集团)高唐库',clientPhone='',clientMobile='',clientAddress='广东省-广州市-天河区-高唐工业园高普路91号',destination='',consignee='广东金康药房连锁有限公司',consigneeName='',consigneePhone='',consigneeMobile='',consigneeAddress='广东省-广州市-海珠区-【返】广州市海珠区工业大道凤岗路38号201、301号',goods='药品',qty=72,weight=0,cubage=0,package='纸箱',payType='月结',declareValue=0,insuranceValue=0,getMoney=0,transtype='汽运',deliverType='整车',signBackType='',receipt=0,receiptPhone=null,receiptAddress=null,receiptTime=null,addition=0,notice='0.0',sendFax=0,company='000032',sysdno='000032001-D1405050001',synupsign=0 WHERE id='88747'
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 116 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 119 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 575 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 577 行.
+[ 2014-05-05T13:32:56+08:00 ] ERR: 
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 578 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:56+08:00 ] SQL:  RunTime:0.009462s SQL = SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'web_order'
+[ 2014-05-05T13:32:56+08:00 ] SQL:  RunTime:0.000863s SQL = SELECT  * FROM web_order WHERE orderNo = 'G01140504085'
+[ 2014-05-05T13:32:56+08:00 ] SQL:  RunTime:0.005077s SQL = UPDATE web_order SET orderNo='G01140504085',billDate='2014-05-04 13:20:02',userId='000032',userName='黄穗',departure='',client='国药控股广州有限公司',clientName='(国药集团)高唐库',clientPhone='',clientMobile='',clientAddress='广东省-广州市-天河区-高唐工业园高普路91号',destination='',consignee='南沙区横沥镇社区卫生服务中心',consigneeName='',consigneePhone='',consigneeMobile='',consigneeAddress='广东省-广州市-南沙区-广州市南沙区横沥镇冯马三村委会',goods='药品',qty=247,weight=0,cubage=0,package='纸箱',payType='月结',declareValue=0,insuranceValue=0,getMoney=0,transtype='汽运',deliverType='零担',signBackType='',receipt=0,receiptPhone=null,receiptAddress=null,receiptTime=null,requirementDate='2014-05-05 09:33:00',requirementTime='2014-05-05 09:33:00',addition=0,notice='0.0',sendFax=0,company='000032',sysdno=null,synupsign=0 WHERE id='88741'
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 116 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 119 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 575 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 577 行.
+[ 2014-05-05T13:32:56+08:00 ] ERR: 
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 578 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:56+08:00 ] SQL:  RunTime:0.009288s SQL = SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'web_order'
+[ 2014-05-05T13:32:56+08:00 ] SQL:  RunTime:0.000770s SQL = SELECT  * FROM web_order WHERE orderNo = 'G01140504088'
+[ 2014-05-05T13:32:56+08:00 ] SQL:  RunTime:0.006139s SQL = UPDATE web_order SET orderNo='G01140504088',billDate='2014-05-04 13:20:06',userId='000032',userName='黄穗',departure='',client='国药控股广州有限公司',clientName='(国药集团)高唐库',clientPhone='',clientMobile='',clientAddress='广东省-广州市-天河区-高唐工业园高普路91号',destination='',consigneeMobile='',consigneeAddress='广东省-深圳市-宝安区-龙华街道建辉路123号',goods='药品',qty=212,weight=0,cubage=0,package='纸箱',payType='月结',declareValue=0,insuranceValue=0,getMoney=0,transtype='汽运',deliverType='零担',signBackType='',receipt=0,receiptPhone=null,receiptAddress=null,receiptTime=null,requirementDate='2014-05-05 09:33:00',requirementTime='2014-05-05 09:33:00',addition=0,notice='0.0',sendFax=0,company='000032',sysdno=null,synupsign=0 WHERE id='88743'
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 116 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 119 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 575 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 577 行.
+[ 2014-05-05T13:32:56+08:00 ] ERR: 
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 578 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:56+08:00 ] SQL:  RunTime:0.009263s SQL = SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'web_order'
+[ 2014-05-05T13:32:56+08:00 ] SQL:  RunTime:0.000964s SQL = SELECT  * FROM web_order WHERE orderNo = 'G01140504153'
+[ 2014-05-05T13:32:56+08:00 ] SQL:  RunTime:0.008274s SQL = UPDATE web_order SET orderNo='G01140504153',billDate='2014-05-04 15:02:07',userId='000032',userName='黄穗',departure='',client='国药控股广州有限公司',clientName='(国药集团)高唐库',clientPhone='',clientMobile='',clientAddress='广东省-广州市-天河区-高唐工业园高普路91号',destination='',consignee='广州采芝林药业有限公司',consigneeName='',consigneePhone='',consigneeMobile='',consigneeAddress='广东省-广州市-荔湾区-【返】芳村塞坝口36号市药材仓库',goods='药品',qty=617,weight=0,cubage=0,package='纸箱',payType='月结',declareValue=0,insuranceValue=0,getMoney=0,transtype='汽运',deliverType='零担',signBackType='',receipt=0,receiptPhone=null,receiptAddress=null,receiptTime=null,requirementDate='2014-05-05 09:33:00',requirementTime='2014-05-05 09:33:00',addition=0,notice='0.0',sendFax=0,company='000032',sysdno=null,synupsign=0 WHERE id='88746'
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 116 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 119 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 575 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 577 行.
+[ 2014-05-05T13:32:56+08:00 ] ERR: 
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 578 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:56+08:00 ] SQL:  RunTime:0.009418s SQL = SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'web_order'
+[ 2014-05-05T13:32:56+08:00 ] SQL:  RunTime:0.000770s SQL = SELECT  * FROM web_order WHERE orderNo = 'G01140504086'
+[ 2014-05-05T13:32:56+08:00 ] SQL:  RunTime:0.002794s SQL = UPDATE web_order SET orderNo='G01140504086',billDate='2014-05-04 13:20:04',userId='000032',userName='黄穗',departure='',client='国药控股广州有限公司',clientName='(国药集团)高唐库',clientPhone='',clientMobile='',clientAddress='广东省-广州市-天河区-高唐工业园高普路91号',destination='',consignee='佛山市雅信医药有限公司',consigneeName='',consigneePhone='',consigneeMobile='',consigneeAddress='广东省-佛山市-南海区-佛山市南海区桂城叠北村民委员会(土名)“西祠岗”',goods='药品',qty=1744,weight=0,cubage=0,package='纸箱',payType='月结',declareValue=0,insuranceValue=0,getMoney=0,transtype='汽运',deliverType='零担',signBackType='',receipt=0,receiptPhone=null,receiptAddress=null,receiptTime=null,requirementDate='2014-05-05 09:33:00',requirementTime='2014-05-05 09:33:00',addition=0,notice='0.0',sendFax=0,company='000032',sysdno=null,synupsign=0 WHERE id='88740'
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 116 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 119 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 575 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 577 行.
+[ 2014-05-05T13:32:56+08:00 ] ERR: 
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 578 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:56+08:00 ] SQL:  RunTime:0.009401s SQL = SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'web_order'
+[ 2014-05-05T13:32:56+08:00 ] SQL:  RunTime:0.001095s SQL = SELECT  * FROM web_order WHERE orderNo = 'G01140504102'
+[ 2014-05-05T13:32:56+08:00 ] SQL:  RunTime:0.006973s SQL = UPDATE web_order SET orderNo='G01140504102',billDate='2014-05-04 13:20:32',userId='000032',userName='黄穗',departure='',client='国药控股广州有限公司',clientName='(国药集团)高唐库',clientPhone='',clientMobile='',clientAddress='广东省-广州市-天河区-高唐工业园高普路91号',destination='',consignee='广州市白云区人民医院',consigneeName='',consigneePhone='',consigneeMobile='',consigneeAddress='广东省-广州市-天河区-广州市沙河龙岗路64号',goods='药品',qty=78,weight=0,cubage=0,package='纸箱',payType='月结',declareValue=0,insuranceValue=0,getMoney=0,transtype='汽运',deliverType='零担',signBackType='',receipt=0,receiptPhone=null,receiptAddress=null,receiptTime=null,requirementDate='2014-05-05 09:33:00',requirementTime='2014-05-05 09:33:00',addition=0,notice='0.0',sendFax=0,company='000032',sysdno=null,synupsign=0 WHERE id='88745'
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 116 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 119 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 575 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 577 行.
+[ 2014-05-05T13:32:56+08:00 ] ERR: 
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 578 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:56+08:00 ] SQL:  RunTime:0.009797s SQL = SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'web_order'
+[ 2014-05-05T13:32:56+08:00 ] SQL:  RunTime:0.000958s SQL = SELECT  * FROM web_order WHERE orderNo = 'G01140505001'
+[ 2014-05-05T13:32:56+08:00 ] SQL:  RunTime:0.010888s SQL = UPDATE web_order SET orderNo='G01140505001',billDate='2014-05-05 08:17:08',userId='000032',userName='王彦岭',departure='',client='国药控股广州有限公司',clientName='(国药集团)高唐库',clientPhone='',clientMobile='',clientAddress='广东省-广州市-天河区-高唐工业园高普路91号',destination='',consignee='广东金康药房连锁有限公司',consigneeName='',consigneePhone='',consigneeMobile='',consigneeAddress='广东省-广州市-海珠区-【返】广州市海珠区工业大道凤岗路38号201、301号',goods='药品',qty=72,weight=0,cubage=0,package='纸箱',payType='月结',declareValue=0,insuranceValue=0,getMoney=0,transtype='汽运',deliverType='整车',signBackType='',receipt=0,receiptPhone=null,receiptAddress=null,receiptTime=null,addition=0,notice='0.0',sendFax=0,company='000032',sysdno='000032001-D1405050001',synupsign=0 WHERE id='88747'
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 116 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 119 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 575 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 577 行.
+[ 2014-05-05T13:32:56+08:00 ] ERR: 
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 578 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:56+08:00 ] SQL:  RunTime:0.009233s SQL = SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'web_order'
+[ 2014-05-05T13:32:56+08:00 ] SQL:  RunTime:0.000869s SQL = SELECT  * FROM web_order WHERE orderNo = 'G01140504085'
+[ 2014-05-05T13:32:56+08:00 ] SQL:  RunTime:0.002483s SQL = UPDATE web_order SET orderNo='G01140504085',billDate='2014-05-04 13:20:02',userId='000032',userName='黄穗',departure='',client='国药控股广州有限公司',clientName='(国药集团)高唐库',clientPhone='',clientMobile='',clientAddress='广东省-广州市-天河区-高唐工业园高普路91号',destination='',consignee='南沙区横沥镇社区卫生服务中心',consigneeName='',consigneePhone='',consigneeMobile='',consigneeAddress='广东省-广州市-南沙区-广州市南沙区横沥镇冯马三村委会',goods='药品',qty=247,weight=0,cubage=0,package='纸箱',payType='月结',declareValue=0,insuranceValue=0,getMoney=0,transtype='汽运',deliverType='零担',signBackType='',receipt=0,receiptPhone=null,receiptAddress=null,receiptTime=null,requirementDate='2014-05-05 09:33:00',requirementTime='2014-05-05 09:33:00',addition=0,notice='0.0',sendFax=0,company='000032',sysdno=null,synupsign=0 WHERE id='88741'
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 116 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 119 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 575 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 577 行.
+[ 2014-05-05T13:32:56+08:00 ] ERR: 
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 578 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:56+08:00 ] SQL:  RunTime:0.009165s SQL = SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'web_order'
+[ 2014-05-05T13:32:56+08:00 ] SQL:  RunTime:0.000923s SQL = SELECT  * FROM web_order WHERE orderNo = 'G01140504088'
+[ 2014-05-05T13:32:56+08:00 ] SQL:  RunTime:0.009570s SQL = UPDATE web_order SET orderNo='G01140504088',billDate='2014-05-04 13:20:06',userId='000032',userName='黄穗',departure='',client='国药控股广州有限公司',clientName='(国药集团)高唐库',clientPhone='',clientMobile='',clientAddress='广东省-广州市-天河区-高唐工业园高普路91号',destination='',consigneeMobile='',consigneeAddress='广东省-深圳市-宝安区-龙华街道建辉路123号',goods='药品',qty=212,weight=0,cubage=0,package='纸箱',payType='月结',declareValue=0,insuranceValue=0,getMoney=0,transtype='汽运',deliverType='零担',signBackType='',receipt=0,receiptPhone=null,receiptAddress=null,receiptTime=null,requirementDate='2014-05-05 09:33:00',requirementTime='2014-05-05 09:33:00',addition=0,notice='0.0',sendFax=0,company='000032',sysdno=null,synupsign=0 WHERE id='88743'
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 116 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 119 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 575 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 577 行.
+[ 2014-05-05T13:32:56+08:00 ] ERR: 
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 578 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:56+08:00 ] SQL:  RunTime:0.009454s SQL = SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'web_order'
+[ 2014-05-05T13:32:56+08:00 ] SQL:  RunTime:0.000908s SQL = SELECT  * FROM web_order WHERE orderNo = 'G01140504153'
+[ 2014-05-05T13:32:56+08:00 ] SQL:  RunTime:0.009824s SQL = UPDATE web_order SET orderNo='G01140504153',billDate='2014-05-04 15:02:07',userId='000032',userName='黄穗',departure='',client='国药控股广州有限公司',clientName='(国药集团)高唐库',clientPhone='',clientMobile='',clientAddress='广东省-广州市-天河区-高唐工业园高普路91号',destination='',consignee='广州采芝林药业有限公司',consigneeName='',consigneePhone='',consigneeMobile='',consigneeAddress='广东省-广州市-荔湾区-【返】芳村塞坝口36号市药材仓库',goods='药品',qty=617,weight=0,cubage=0,package='纸箱',payType='月结',declareValue=0,insuranceValue=0,getMoney=0,transtype='汽运',deliverType='零担',signBackType='',receipt=0,receiptPhone=null,receiptAddress=null,receiptTime=null,requirementDate='2014-05-05 09:33:00',requirementTime='2014-05-05 09:33:00',addition=0,notice='0.0',sendFax=0,company='000032',sysdno=null,synupsign=0 WHERE id='88746'
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 116 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 119 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 575 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 577 行.
+[ 2014-05-05T13:32:56+08:00 ] ERR: 
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 578 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:56+08:00 ] SQL:  RunTime:0.009042s SQL = SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'web_order'
+[ 2014-05-05T13:32:56+08:00 ] SQL:  RunTime:0.000824s SQL = SELECT  * FROM web_order WHERE orderNo = 'G01140504086'
+[ 2014-05-05T13:32:56+08:00 ] SQL:  RunTime:0.011039s SQL = UPDATE web_order SET orderNo='G01140504086',billDate='2014-05-04 13:20:04',userId='000032',userName='黄穗',departure='',client='国药控股广州有限公司',clientName='(国药集团)高唐库',clientPhone='',clientMobile='',clientAddress='广东省-广州市-天河区-高唐工业园高普路91号',destination='',consignee='佛山市雅信医药有限公司',consigneeName='',consigneePhone='',consigneeMobile='',consigneeAddress='广东省-佛山市-南海区-佛山市南海区桂城叠北村民委员会(土名)“西祠岗”',goods='药品',qty=1744,weight=0,cubage=0,package='纸箱',payType='月结',declareValue=0,insuranceValue=0,getMoney=0,transtype='汽运',deliverType='零担',signBackType='',receipt=0,receiptPhone=null,receiptAddress=null,receiptTime=null,requirementDate='2014-05-05 09:33:00',requirementTime='2014-05-05 09:33:00',addition=0,notice='0.0',sendFax=0,company='000032',sysdno=null,synupsign=0 WHERE id='88740'
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 116 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 119 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 575 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 577 行.
+[ 2014-05-05T13:32:56+08:00 ] ERR: 
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 578 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 90 行.
+[ 2014-05-05T13:32:56+08:00 ] SQL:  RunTime:0.009019s SQL = SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'web_order'
+[ 2014-05-05T13:32:56+08:00 ] SQL:  RunTime:0.001005s SQL = SELECT  * FROM web_order WHERE orderNo = 'G01140504084'
+[ 2014-05-05T13:32:56+08:00 ] SQL:  RunTime:0.015594s SQL = UPDATE web_order SET orderNo='G01140504084',billDate='2014-05-04 13:20:00',userId='000032',userName='黄穗',departure='',client='国药控股广州有限公司',clientName='(国药集团)高唐库',clientPhone='',clientMobile='',clientAddress='广东省-广州市-天河区-高唐工业园高普路91号',destination='',consignee='国药控股广州有限公司',consigneeName='',consigneePhone='',consigneeMobile='',consigneeAddress='广东省-深圳市-宝安区-深圳市宝安区龙华镇建辉路123号',goods='药品',qty=1748,weight=0,cubage=0,package='纸箱',payType='月结',declareValue=0,insuranceValue=0,getMoney=0,transtype='汽运',deliverType='零担',signBackType='',receipt=0,receiptPhone=null,receiptAddress=null,receiptTime=null,requirementDate='2014-05-05 09:33:00',requirementTime='2014-05-05 09:33:00',addition=0,notice='0.0',sendFax=0,company='000032',sysdno=null,synupsign=0 WHERE id='88742'
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 116 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Undefined variable: rs GuoYaoService.php 第 119 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 575 行.
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 577 行.
+[ 2014-05-05T13:32:56+08:00 ] ERR: 
+[ 2014-05-05T13:32:56+08:00 ] NOTIC: [8] Trying to get property of non-object GuoYaoService.php 第 578 行.
+[ 2014-05-05T13:47:00+08:00 ] NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' App.class.php 第 76 行.
+[ 2014-05-05T13:47:00+08:00 ] NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' App.class.php 第 337 行.
+[ 2014-05-05T13:47:00+08:00 ] NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' App.class.php 第 353 行.
+[ 2014-05-05T13:47:00+08:00 ] NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' App.class.php 第 357 行.
+[ 2014-05-05T13:47:00+08:00 ] NOTIC: [8] Use of undefined constant GROUP_NAME - assumed 'GROUP_NAME' App.class.php 第 360 行.
+[ 2014-05-05T13:47:00+08:00 ] NOTIC: [8] Undefined index:  debug autosynguoyao.php 第 15 行.
+[ 2014-05-05T13:47:00+08:00 ] NOTIC: [2048] Assigning the return value of new by reference is deprecated nusoap.php 第 7381 行.
+[ 2014-05-05T13:47:00+08:00 ] NOTIC: [2048] Creating default object from empty value nusoap.php 第 75 行.
+[ 2014-05-05T14:00:00+08:00 ] NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' App.class.php 第 76 行.
+[ 2014-05-05T14:00:00+08:00 ] NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' App.class.php 第 337 行.
+[ 2014-05-05T14:00:00+08:00 ] NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' App.class.php 第 353 行.
+[ 2014-05-05T14:00:00+08:00 ] NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' App.class.php 第 357 行.
+[ 2014-05-05T14:00:00+08:00 ] NOTIC: [8] Use of undefined constant GROUP_NAME - assumed 'GROUP_NAME' App.class.php 第 360 行.
+[ 2014-05-05T14:00:00+08:00 ] NOTIC: [8] Undefined index:  debug synupguoyao.php 第 15 行.
+[ 2014-05-05T14:00:00+08:00 ] NOTIC: [2048] Assigning the return value of new by reference is deprecated nusoap.php 第 7381 行.
+[ 2014-05-05T14:00:00+08:00 ] NOTIC: [2048] Creating default object from empty value nusoap.php 第 75 行.
+[ 2014-05-05T14:00:00+08:00 ] SQL:  RunTime:0.000890s SQL = SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'web_airwaybill'
+[ 2014-05-05T14:00:00+08:00 ] SQL:  RunTime:0.319562s SQL = SELECT w.id, w.orderno, a.dno, isnull(a.signdate,'1900-01-01 00:00:00') as signdate, a.signin,
+					   a.qty, a.weight, convert(money,a.cubage) as cubage, a.netweight, a.price, 
+					   isnull(a.planno,'') as planeno, a.packagemoney, a.delivermoney, a.money, a.insurance, a.othermoney, a.freight
+		          FROM airwaybill a INNER JOIN web_order w ON a.weborder = w.id
+		         WHERE w.synup = 0 
+[ 2014-05-05T14:00:01+08:00 ] SQL:  RunTime:0.009008s SQL = SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'web_ordertrack'
+[ 2014-05-05T14:00:01+08:00 ] SQL:  RunTime:0.001696s SQL = SELECT  * FROM web_ordertrack WHERE synup = 0
+[ 2014-05-05T14:00:01+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:01+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:01+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:01+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:01+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:01+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:01+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:01+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:01+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:01+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:01+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:01+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:01+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:01+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:01+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:01+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:01+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:01+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:00:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:00:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:17:00+08:00 ] NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' App.class.php 第 76 行.
+[ 2014-05-05T14:17:00+08:00 ] NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' App.class.php 第 337 行.
+[ 2014-05-05T14:17:00+08:00 ] NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' App.class.php 第 353 行.
+[ 2014-05-05T14:17:00+08:00 ] NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' App.class.php 第 357 行.
+[ 2014-05-05T14:17:00+08:00 ] NOTIC: [8] Use of undefined constant GROUP_NAME - assumed 'GROUP_NAME' App.class.php 第 360 行.
+[ 2014-05-05T14:17:00+08:00 ] NOTIC: [8] Undefined index:  debug autosynguoyao.php 第 15 行.
+[ 2014-05-05T14:17:00+08:00 ] NOTIC: [2048] Assigning the return value of new by reference is deprecated nusoap.php 第 7381 行.
+[ 2014-05-05T14:17:00+08:00 ] NOTIC: [2048] Creating default object from empty value nusoap.php 第 75 行.
+[ 2014-05-05T14:30:00+08:00 ] NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' App.class.php 第 76 行.
+[ 2014-05-05T14:30:00+08:00 ] NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' App.class.php 第 337 行.
+[ 2014-05-05T14:30:00+08:00 ] NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' App.class.php 第 353 行.
+[ 2014-05-05T14:30:00+08:00 ] NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' App.class.php 第 357 行.
+[ 2014-05-05T14:30:00+08:00 ] NOTIC: [8] Use of undefined constant GROUP_NAME - assumed 'GROUP_NAME' App.class.php 第 360 行.
+[ 2014-05-05T14:30:00+08:00 ] NOTIC: [8] Undefined index:  debug synupguoyao.php 第 15 行.
+[ 2014-05-05T14:30:00+08:00 ] NOTIC: [2048] Assigning the return value of new by reference is deprecated nusoap.php 第 7381 行.
+[ 2014-05-05T14:30:00+08:00 ] NOTIC: [2048] Creating default object from empty value nusoap.php 第 75 行.
+[ 2014-05-05T14:30:00+08:00 ] SQL:  RunTime:0.047962s SQL = SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'web_airwaybill'
+[ 2014-05-05T14:30:00+08:00 ] SQL:  RunTime:0.401726s SQL = SELECT w.id, w.orderno, a.dno, isnull(a.signdate,'1900-01-01 00:00:00') as signdate, a.signin,
+					   a.qty, a.weight, convert(money,a.cubage) as cubage, a.netweight, a.price, 
+					   isnull(a.planno,'') as planeno, a.packagemoney, a.delivermoney, a.money, a.insurance, a.othermoney, a.freight
+		          FROM airwaybill a INNER JOIN web_order w ON a.weborder = w.id
+		         WHERE w.synup = 0 
+[ 2014-05-05T14:30:01+08:00 ] SQL:  RunTime:0.008919s SQL = SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'web_ordertrack'
+[ 2014-05-05T14:30:01+08:00 ] SQL:  RunTime:0.006373s SQL = SELECT  * FROM web_ordertrack WHERE synup = 0
+[ 2014-05-05T14:30:01+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:01+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:01+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:01+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:01+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:01+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:01+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:01+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:01+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:01+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:01+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:01+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:01+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:01+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:30:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T14:30:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T14:47:00+08:00 ] NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' App.class.php 第 76 行.
+[ 2014-05-05T14:47:00+08:00 ] NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' App.class.php 第 337 行.
+[ 2014-05-05T14:47:00+08:00 ] NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' App.class.php 第 353 行.
+[ 2014-05-05T14:47:00+08:00 ] NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' App.class.php 第 357 行.
+[ 2014-05-05T14:47:00+08:00 ] NOTIC: [8] Use of undefined constant GROUP_NAME - assumed 'GROUP_NAME' App.class.php 第 360 行.
+[ 2014-05-05T14:47:00+08:00 ] NOTIC: [8] Undefined index:  debug autosynguoyao.php 第 15 行.
+[ 2014-05-05T14:47:00+08:00 ] NOTIC: [2048] Assigning the return value of new by reference is deprecated nusoap.php 第 7381 行.
+[ 2014-05-05T14:47:00+08:00 ] NOTIC: [2048] Creating default object from empty value nusoap.php 第 75 行.
+[ 2014-05-05T15:00:00+08:00 ] NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' App.class.php 第 76 行.
+[ 2014-05-05T15:00:00+08:00 ] NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' App.class.php 第 337 行.
+[ 2014-05-05T15:00:00+08:00 ] NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' App.class.php 第 353 行.
+[ 2014-05-05T15:00:00+08:00 ] NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' App.class.php 第 357 行.
+[ 2014-05-05T15:00:00+08:00 ] NOTIC: [8] Use of undefined constant GROUP_NAME - assumed 'GROUP_NAME' App.class.php 第 360 行.
+[ 2014-05-05T15:00:00+08:00 ] NOTIC: [8] Undefined index:  debug synupguoyao.php 第 15 行.
+[ 2014-05-05T15:00:00+08:00 ] NOTIC: [2048] Assigning the return value of new by reference is deprecated nusoap.php 第 7381 行.
+[ 2014-05-05T15:00:00+08:00 ] NOTIC: [2048] Creating default object from empty value nusoap.php 第 75 行.
+[ 2014-05-05T15:00:00+08:00 ] SQL:  RunTime:0.001048s SQL = SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'web_airwaybill'
+[ 2014-05-05T15:00:00+08:00 ] SQL:  RunTime:0.268804s SQL = SELECT w.id, w.orderno, a.dno, isnull(a.signdate,'1900-01-01 00:00:00') as signdate, a.signin,
+					   a.qty, a.weight, convert(money,a.cubage) as cubage, a.netweight, a.price, 
+					   isnull(a.planno,'') as planeno, a.packagemoney, a.delivermoney, a.money, a.insurance, a.othermoney, a.freight
+		          FROM airwaybill a INNER JOIN web_order w ON a.weborder = w.id
+		         WHERE w.synup = 0 
+[ 2014-05-05T15:00:01+08:00 ] SQL:  RunTime:0.009219s SQL = SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'web_ordertrack'
+[ 2014-05-05T15:00:01+08:00 ] SQL:  RunTime:0.043892s SQL = SELECT  * FROM web_ordertrack WHERE synup = 0
+[ 2014-05-05T15:00:01+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:01+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:01+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:01+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:01+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:01+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:01+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:01+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:01+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:01+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:01+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:01+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:01+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:01+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:00:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:00:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:17:00+08:00 ] NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' App.class.php 第 76 行.
+[ 2014-05-05T15:17:00+08:00 ] NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' App.class.php 第 337 行.
+[ 2014-05-05T15:17:00+08:00 ] NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' App.class.php 第 353 行.
+[ 2014-05-05T15:17:00+08:00 ] NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' App.class.php 第 357 行.
+[ 2014-05-05T15:17:00+08:00 ] NOTIC: [8] Use of undefined constant GROUP_NAME - assumed 'GROUP_NAME' App.class.php 第 360 行.
+[ 2014-05-05T15:17:00+08:00 ] NOTIC: [8] Undefined index:  debug autosynguoyao.php 第 15 行.
+[ 2014-05-05T15:17:00+08:00 ] NOTIC: [2048] Assigning the return value of new by reference is deprecated nusoap.php 第 7381 行.
+[ 2014-05-05T15:17:00+08:00 ] NOTIC: [2048] Creating default object from empty value nusoap.php 第 75 行.
+[ 2014-05-05T15:17:04+08:00 ] NOTIC: [8] Undefined index:  result nusoap.php 第 6497 行.
+[ 2014-05-05T15:17:04+08:00 ] ERR: the webservice was no result.
+[ 2014-05-05T15:30:00+08:00 ] NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' App.class.php 第 76 行.
+[ 2014-05-05T15:30:00+08:00 ] NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' App.class.php 第 337 行.
+[ 2014-05-05T15:30:00+08:00 ] NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' App.class.php 第 353 行.
+[ 2014-05-05T15:30:00+08:00 ] NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' App.class.php 第 357 行.
+[ 2014-05-05T15:30:00+08:00 ] NOTIC: [8] Use of undefined constant GROUP_NAME - assumed 'GROUP_NAME' App.class.php 第 360 行.
+[ 2014-05-05T15:30:00+08:00 ] NOTIC: [8] Undefined index:  debug synupguoyao.php 第 15 行.
+[ 2014-05-05T15:30:00+08:00 ] NOTIC: [2048] Assigning the return value of new by reference is deprecated nusoap.php 第 7381 行.
+[ 2014-05-05T15:30:00+08:00 ] NOTIC: [2048] Creating default object from empty value nusoap.php 第 75 行.
+[ 2014-05-05T15:30:00+08:00 ] SQL:  RunTime:0.085015s SQL = SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'web_airwaybill'
+[ 2014-05-05T15:30:00+08:00 ] SQL:  RunTime:0.291634s SQL = SELECT w.id, w.orderno, a.dno, isnull(a.signdate,'1900-01-01 00:00:00') as signdate, a.signin,
+					   a.qty, a.weight, convert(money,a.cubage) as cubage, a.netweight, a.price, 
+					   isnull(a.planno,'') as planeno, a.packagemoney, a.delivermoney, a.money, a.insurance, a.othermoney, a.freight
+		          FROM airwaybill a INNER JOIN web_order w ON a.weborder = w.id
+		         WHERE w.synup = 0 
+[ 2014-05-05T15:30:01+08:00 ] SQL:  RunTime:0.009055s SQL = SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'web_ordertrack'
+[ 2014-05-05T15:30:01+08:00 ] SQL:  RunTime:0.034743s SQL = SELECT  * FROM web_ordertrack WHERE synup = 0
+[ 2014-05-05T15:30:01+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:01+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:01+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:01+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:01+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:01+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:01+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:01+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:01+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:01+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:01+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:01+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:01+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:01+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:01+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:01+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:30:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T15:30:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T15:47:00+08:00 ] NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' App.class.php 第 76 行.
+[ 2014-05-05T15:47:00+08:00 ] NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' App.class.php 第 337 行.
+[ 2014-05-05T15:47:00+08:00 ] NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' App.class.php 第 353 行.
+[ 2014-05-05T15:47:00+08:00 ] NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' App.class.php 第 357 行.
+[ 2014-05-05T15:47:00+08:00 ] NOTIC: [8] Use of undefined constant GROUP_NAME - assumed 'GROUP_NAME' App.class.php 第 360 行.
+[ 2014-05-05T15:47:00+08:00 ] NOTIC: [8] Undefined index:  debug autosynguoyao.php 第 15 行.
+[ 2014-05-05T15:47:00+08:00 ] NOTIC: [2048] Assigning the return value of new by reference is deprecated nusoap.php 第 7381 行.
+[ 2014-05-05T15:47:00+08:00 ] NOTIC: [2048] Creating default object from empty value nusoap.php 第 75 行.
+[ 2014-05-05T15:47:00+08:00 ] NOTIC: [8] Undefined index:  result nusoap.php 第 6497 行.
+[ 2014-05-05T15:47:00+08:00 ] ERR: the webservice was no result.
+[ 2014-05-05T16:00:00+08:00 ] NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' App.class.php 第 76 行.
+[ 2014-05-05T16:00:00+08:00 ] NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' App.class.php 第 337 行.
+[ 2014-05-05T16:00:00+08:00 ] NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' App.class.php 第 353 行.
+[ 2014-05-05T16:00:00+08:00 ] NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' App.class.php 第 357 行.
+[ 2014-05-05T16:00:00+08:00 ] NOTIC: [8] Use of undefined constant GROUP_NAME - assumed 'GROUP_NAME' App.class.php 第 360 行.
+[ 2014-05-05T16:00:00+08:00 ] NOTIC: [8] Undefined index:  debug synupguoyao.php 第 15 行.
+[ 2014-05-05T16:00:00+08:00 ] NOTIC: [2048] Assigning the return value of new by reference is deprecated nusoap.php 第 7381 行.
+[ 2014-05-05T16:00:00+08:00 ] NOTIC: [2048] Creating default object from empty value nusoap.php 第 75 行.
+[ 2014-05-05T16:00:00+08:00 ] SQL:  RunTime:0.048376s SQL = SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'web_airwaybill'
+[ 2014-05-05T16:00:03+08:00 ] SQL:  RunTime:2.681216s SQL = SELECT w.id, w.orderno, a.dno, isnull(a.signdate,'1900-01-01 00:00:00') as signdate, a.signin,
+					   a.qty, a.weight, convert(money,a.cubage) as cubage, a.netweight, a.price, 
+					   isnull(a.planno,'') as planeno, a.packagemoney, a.delivermoney, a.money, a.insurance, a.othermoney, a.freight
+		          FROM airwaybill a INNER JOIN web_order w ON a.weborder = w.id
+		         WHERE w.synup = 0 
+[ 2014-05-05T16:00:03+08:00 ] SQL:  RunTime:0.009091s SQL = SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'web_ordertrack'
+[ 2014-05-05T16:00:03+08:00 ] SQL:  RunTime:0.049770s SQL = SELECT  * FROM web_ordertrack WHERE synup = 0
+[ 2014-05-05T16:00:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:08+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:08+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:08+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:08+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:08+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:08+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:08+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:08+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:08+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:08+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:08+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:08+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:08+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:08+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:08+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:08+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:08+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:08+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:08+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:08+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:08+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:08+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:09+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:09+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:09+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:09+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:09+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:09+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:09+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:09+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:09+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:09+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:09+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:09+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:09+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:09+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:09+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:09+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:09+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:09+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:09+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:09+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:09+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:09+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:09+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:09+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:00:10+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:00:10+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:17:00+08:00 ] NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' App.class.php 第 76 行.
+[ 2014-05-05T16:17:00+08:00 ] NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' App.class.php 第 337 行.
+[ 2014-05-05T16:17:00+08:00 ] NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' App.class.php 第 353 行.
+[ 2014-05-05T16:17:00+08:00 ] NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' App.class.php 第 357 行.
+[ 2014-05-05T16:17:00+08:00 ] NOTIC: [8] Use of undefined constant GROUP_NAME - assumed 'GROUP_NAME' App.class.php 第 360 行.
+[ 2014-05-05T16:17:00+08:00 ] NOTIC: [8] Undefined index:  debug autosynguoyao.php 第 15 行.
+[ 2014-05-05T16:17:00+08:00 ] NOTIC: [2048] Assigning the return value of new by reference is deprecated nusoap.php 第 7381 行.
+[ 2014-05-05T16:17:00+08:00 ] NOTIC: [2048] Creating default object from empty value nusoap.php 第 75 行.
+[ 2014-05-05T16:17:00+08:00 ] NOTIC: [8] Undefined index:  result nusoap.php 第 6497 行.
+[ 2014-05-05T16:17:00+08:00 ] ERR: the webservice was no result.
+[ 2014-05-05T16:30:00+08:00 ] NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' App.class.php 第 76 行.
+[ 2014-05-05T16:30:00+08:00 ] NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' App.class.php 第 337 行.
+[ 2014-05-05T16:30:00+08:00 ] NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' App.class.php 第 353 行.
+[ 2014-05-05T16:30:00+08:00 ] NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' App.class.php 第 357 行.
+[ 2014-05-05T16:30:00+08:00 ] NOTIC: [8] Use of undefined constant GROUP_NAME - assumed 'GROUP_NAME' App.class.php 第 360 行.
+[ 2014-05-05T16:30:00+08:00 ] NOTIC: [8] Undefined index:  debug synupguoyao.php 第 15 行.
+[ 2014-05-05T16:30:00+08:00 ] NOTIC: [2048] Assigning the return value of new by reference is deprecated nusoap.php 第 7381 行.
+[ 2014-05-05T16:30:00+08:00 ] NOTIC: [2048] Creating default object from empty value nusoap.php 第 75 行.
+[ 2014-05-05T16:30:00+08:00 ] SQL:  RunTime:0.106599s SQL = SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'web_airwaybill'
+[ 2014-05-05T16:30:00+08:00 ] SQL:  RunTime:0.334602s SQL = SELECT w.id, w.orderno, a.dno, isnull(a.signdate,'1900-01-01 00:00:00') as signdate, a.signin,
+					   a.qty, a.weight, convert(money,a.cubage) as cubage, a.netweight, a.price, 
+					   isnull(a.planno,'') as planeno, a.packagemoney, a.delivermoney, a.money, a.insurance, a.othermoney, a.freight
+		          FROM airwaybill a INNER JOIN web_order w ON a.weborder = w.id
+		         WHERE w.synup = 0 
+[ 2014-05-05T16:30:01+08:00 ] SQL:  RunTime:0.018710s SQL = SELECT   column_name,   data_type,   column_default,   is_nullable
+        FROM    information_schema.tables AS t
+        JOIN    information_schema.columns AS c
+        ON  t.table_catalog = c.table_catalog
+        AND t.table_schema  = c.table_schema
+        AND t.table_name    = c.table_name
+        WHERE   t.table_name = 'web_ordertrack'
+[ 2014-05-05T16:30:01+08:00 ] SQL:  RunTime:0.054482s SQL = SELECT  * FROM web_ordertrack WHERE synup = 0
+[ 2014-05-05T16:30:01+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:01+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:01+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:01+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:01+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:01+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:02+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:02+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:03+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:03+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:04+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:04+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:05+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:05+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:06+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:06+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:30:07+08:00 ] ERR: LEGNO不能为空
+com.vtradex.thorn.server.exception.BusinessException: LEGNO不能为空
+保存失败
+[ 2014-05-05T16:30:07+08:00 ] ERR: result fault on setTmsShipmentInTransit:0
+[ 2014-05-05T16:47:00+08:00 ] NOTIC: [8] Use of undefined constant _PHP_FILE_ - assumed '_PHP_FILE_' App.class.php 第 76 行.
+[ 2014-05-05T16:47:00+08:00 ] NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' App.class.php 第 337 行.
+[ 2014-05-05T16:47:00+08:00 ] NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' App.class.php 第 353 行.
+[ 2014-05-05T16:47:00+08:00 ] NOTIC: [8] Use of undefined constant __ROOT__ - assumed '__ROOT__' App.class.php 第 357 行.
+[ 2014-05-05T16:47:00+08:00 ] NOTIC: [8] Use of undefined constant GROUP_NAME - assumed 'GROUP_NAME' App.class.php 第 360 行.
+[ 2014-05-05T16:47:00+08:00 ] NOTIC: [8] Undefined index:  debug autosynguoyao.php 第 15 行.
+[ 2014-05-05T16:47:00+08:00 ] NOTIC: [2048] Assigning the return value of new by reference is deprecated nusoap.php 第 7381 行.
+[ 2014-05-05T16:47:00+08:00 ] NOTIC: [2048] Creating default object from empty value nusoap.php 第 75 行.
+[ 2014-05-05T16:47:01+08:00 ] NOTIC: [8] Undefined index:  result nusoap.php 第 6497 行.
+[ 2014-05-05T16:47:01+08:00 ] ERR: the webservice was no result.

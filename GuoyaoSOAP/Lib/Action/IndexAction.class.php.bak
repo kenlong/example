@@ -1,0 +1,211 @@
+<?php
+class IndexAction extends Action{
+    public function index()
+    {
+		vendor("GuoYaoService",LIB_PATH."\Service");
+
+		if($_REQUEST['debug']=='yes'){
+			define('DEBUG',true);
+		} else {
+			define('DEBUG',false);
+		}
+
+		
+		$service = new GuoYaoService();
+		//$service->readFromSPL();
+		
+		echo 'synup';
+		$service->synup();
+		
+		/*
+		$headmodel = new OrderModel();
+		$find = $headmodel->where("orderNo = 'G01140307156'")->find();
+		unset($find['dno']);
+		unset($find['synup']);
+		unset($find['billNo']);
+		unset($find['OrderInfoId']);
+		unset($find['status']);
+		
+		print_r($find);
+			*/
+		
+    }
+    
+    public function testwebservice()
+	{
+/*
+$request  = "<?xml version='1.0' encoding='utf-8'?>";
+$request .= "<request>";
+$request .= "<head>";
+$request .= "<user>user4soap</user>";
+$request .= "<pass>pass4soap</pass>";
+$request .= "<type>02-02</type>";
+$request .= "</head>";
+$request .= "<body>";
+$request .= "<userId>kenlong</userId>";
+$request .= "<sdate>2010-01-01</sdate>";
+$request .= "<edate>2010-05-01</edate>";
+$request .= "</body>";
+$request .= "</request>";		
+*/
+/*
+$request = <<<XML
+<?xml version="1.0" encoding="utf-8"?>
+<request>
+  <head>
+    <user>user4soap</user>
+    <pass>pass4soap</pass>
+    <type>01</type>
+  </head>
+  <body>
+    <no>NG01-001</no>
+  </body>
+</request>
+XML;
+*/
+/*
+$request = <<<XML
+<?xml version="1.0" encoding="utf-8"?>
+<request>
+  <head>
+    <user>user4soap</user>
+    <pass>pass4soap</pass>
+    <type>02-01</type>
+  </head>
+  <body>
+	  <id></id>
+	  <billDate>2010-04-20</billDate>
+	  <userName>ken</userName>
+	  <departure>广州</departure>
+	  <clientName>发货人</clientName>
+	  <clientPhone>发货人电话</clientPhone>
+	  <clientAddress>发货人地址</clientAddress>
+	  <destination>北京</destination>
+	  <consignee>收货人</consignee>
+	  <consigneePhone>收货人电话</consigneePhone>
+	  <consigneeAddress>收货人地址</consigneeAddress>
+	  <goods>电子配件</goods>
+	  <qty>2</qty>
+	  <weight>100</weight>
+	  <cubage>1</cubage>
+	  <package>纸箱</package>
+	  <payType>现金</payType>
+	  <insuranceValue>1000</insuranceValue>
+	  <getMoney>3000</getMoney>
+	  <transtype>空运</transtype>
+	  <deliverType>客户自提</deliverType>
+	  <signBackType>签收单原件返回</signBackType>
+	  <receipt>1</receipt>
+	  <receiptPhone>112233</receiptPhone>
+	  <receiptAddress>广州某个地方</receiptAddress>
+	  <receiptTime>晚上7点后</receiptTime>
+	  <notice>承运注意事项</notice>
+  </body>
+</request>
+XML;
+*/
+
+/*
+$request  = "<?xml version='1.0' encoding='utf-8'?>";
+$request .= "<request>";
+$request .= "<head>";
+$request .= "<user>user4soap</user>";
+$request .= "<pass>pass4soap</pass>";
+$request .= "<type>03</type>";
+$request .= "</head>";
+$request .= "<body>";
+$request .= "<id>95</id>";
+$request .= "</body>";
+$request .= "</request>";		
+
+
+		vendor("ControlService",LIB_PATH."\Service");
+		
+		$service = new ControlService();
+		
+		$result = $service->query($request);
+		print_r($result);
+*/		
+		/*
+		import("COM.Utils.XMLUtil");
+		$xml = simplexml_load_string($result); 
+		$data = XMLUtil::XML2array($xml);
+		print_r($data);
+		*/
+	}
+	
+	public function t()
+	{
+		$model  =new OrderModel();
+		$rs = $model->where("orderNo ='".$head["orderNo"]."'")->find();
+		
+		print_r($rs);
+		
+		
+		
+		/*
+		vendor("WebOrderService",LIB_PATH."\Service");
+		
+		$service = new WebOrderService();
+		
+		$result = $service->login((object)array("userID"=>"00100001","userPass"=>"0000"));
+		
+		print_r((object)$result);
+		*/
+	}
+	
+	public function guoyao()
+	{
+		$orderno = $_REQUEST["orderno"];
+	
+		echo "<META http-equiv=Content-Type content='text/html; charset=utf-8'> <form action='' method=post style='font:13px'>订单号:&nbsp<input type=text id='orderno' name='orderno' value='1111211'>&nbsp<input type=submit value='查询' style='width:60px'></form>";
+		echo "<br>";
+		
+		if(!$orderno)
+		{
+			return;
+		}
+		
+		vendor("WebOrderService",LIB_PATH."\Service");
+		
+		$service = new WebOrderService();
+		
+		$parm->orderNo = $orderno;
+		$parm->userID = 'supervisor';
+		$result = $service->queryTrack($parm);
+		
+		$head = $result['queryTrackResult']['BillTrackHead'];
+		
+		echo "<table border=1>";
+		$th = "<tr>";
+		$td = "<tr>";
+		foreach ($head as $key=>$value)
+		{
+			$th .= "<th>".$key."</th>";
+			$td .= "<td>".$value."</td>";
+		}
+		$th .= "</tr>";
+		$td .= "</tr>";
+		
+		echo $th;
+		echo $td;
+		echo "</table>";
+		
+		$detail = $result['queryTrackResult']['BillTrackDetail'];
+		echo "<br>";
+		echo "<table border=1>";		
+		echo "<tr><th>TrackTime</th><th>Tracker</th><th>Info</th><th>Dept</th></tr>";
+		
+		for($i=0;$i<count($detail);$i++)
+		{
+			echo "<tr><td>".$detail[$i]->TrackTime."</td><td>".$detail[$i]->Tracker."</td><td>".$detail[$i]->Info."</td><td>".$detail[$i]->Dept."</td></tr>";
+		}
+		
+		echo "</table>";
+		
+		
+	}
+	
+    
+}
+?>

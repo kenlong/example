@@ -1,0 +1,1704 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://tempuri.org/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="AddOrginfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="orginxml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddOrginfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddOrginfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SecurityHeader" type="tns:SecurityHeader" />
+      <s:complexType name="SecurityHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserId" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DeleteOrginfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="orginid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteOrginfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteOrginfoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrganNextLevelCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="rootOrganId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="parentId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrganNextLevelCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOrganNextLevelCodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDeptmentNextLevelCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="organId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deptId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDeptmentNextLevelCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDeptmentNextLevelCodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOrginfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="orginxml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOrginfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateOrginfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrginfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="orginid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrginfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOrginfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSubOrginfoById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="orginid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSubOrginfoByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSubOrginfoByIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrginfoByRoot">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="rootorginid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrginfoByRootResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOrginfoByRootResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrginfoByLevelcode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="orginid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="levelcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrginfoByLevelcodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOrginfoByLevelcodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOrginfoStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="orginid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOrginfoStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateOrginfoStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUserInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userxml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUserInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddUserInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteUserinfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteUserinfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteUserinfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userxml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateUserInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsersInfoById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsersInfoByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUsersInfoByIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsersInfoUnderOrgan">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="organId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsersInfoUnderOrganResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUsersInfoUnderOrganResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsersInfoByDept">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="organId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deptId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsersInfoByDeptResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUsersInfoByDeptResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsersInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="organId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deptId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="positionId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsersInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUsersInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangePassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="employeeId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="oldpassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newpassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangePasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChangePasswordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserInfoStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="employeeId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserInfoStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateUserInfoStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddDepartment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deptxml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddDepartmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddDepartmentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteDepartment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deptId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteDepartmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteDepartmentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDepartment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deptxml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDepartmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateDepartmentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDepartmentStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deptid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDepartmentStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateDepartmentStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDepartmentById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deptid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDepartmentByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDepartmentByIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDepartment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="organId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="deptId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDepartmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDepartmentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDepartmentByLevelCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="organId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="levelcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDepartmentByLevelCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDepartmentByLevelCodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllDepartment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="organId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllDepartmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllDepartmentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDepartmentsByParentId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="parentId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDepartmentsByParentIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDepartmentsByParentIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPesition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pesitionxml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPesitionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddPesitionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeletePetition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="petitionId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeletePetitionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeletePetitionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePesition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pesitionxml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePesitionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdatePesitionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPesition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pesitionId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPesitionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPesitionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPesitions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="organId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="parentId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPesitionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPesitionsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePesitionStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pesitionId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePesitionStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdatePesitionStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPesitionsByLevelCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="organId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="levelcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPesitionsByLevelCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPesitionsByLevelCodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPesitionsByOrganId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="organId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPesitionsByOrganIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPesitionsByOrganIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUpdateLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updatexml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUpdateLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddUpdateLogResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteUpdateLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="recordId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteUpdateLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteUpdateLogResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllUpdateLog">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllUpdateLogResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllUpdateLogResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNoUpdateLogId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="maxId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="opertor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNoUpdateLogIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNoUpdateLogIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EAMSGetLicense">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="organId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EAMSGetLicenseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EAMSGetLicenseResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuildValidateCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BuildValidateCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BuildValidateCodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetValidateCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="recordId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetValidateCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetValidateCodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetValidateCodeByUserId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetValidateCodeByUserIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetValidateCodeByUserIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AddOrginfoSoapIn">
+    <wsdl:part name="parameters" element="tns:AddOrginfo" />
+  </wsdl:message>
+  <wsdl:message name="AddOrginfoSoapOut">
+    <wsdl:part name="parameters" element="tns:AddOrginfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddOrginfoSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="DeleteOrginfoSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteOrginfo" />
+  </wsdl:message>
+  <wsdl:message name="DeleteOrginfoSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteOrginfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteOrginfoSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetOrganNextLevelCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOrganNextLevelCode" />
+  </wsdl:message>
+  <wsdl:message name="GetOrganNextLevelCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOrganNextLevelCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOrganNextLevelCodeSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetDeptmentNextLevelCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDeptmentNextLevelCode" />
+  </wsdl:message>
+  <wsdl:message name="GetDeptmentNextLevelCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDeptmentNextLevelCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDeptmentNextLevelCodeSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrginfoSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateOrginfo" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrginfoSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateOrginfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrginfoSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetOrginfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOrginfo" />
+  </wsdl:message>
+  <wsdl:message name="GetOrginfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOrginfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOrginfoSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetSubOrginfoByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSubOrginfoById" />
+  </wsdl:message>
+  <wsdl:message name="GetSubOrginfoByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSubOrginfoByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSubOrginfoByIdSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetOrginfoByRootSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOrginfoByRoot" />
+  </wsdl:message>
+  <wsdl:message name="GetOrginfoByRootSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOrginfoByRootResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOrginfoByRootSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetOrginfoByLevelcodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOrginfoByLevelcode" />
+  </wsdl:message>
+  <wsdl:message name="GetOrginfoByLevelcodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOrginfoByLevelcodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOrginfoByLevelcodeSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrginfoStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateOrginfoStatus" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrginfoStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateOrginfoStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOrginfoStatusSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="AddUserInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:AddUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="AddUserInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:AddUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddUserInfoSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserinfoSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteUserinfo" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserinfoSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteUserinfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUserinfoSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserInfoSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersInfoByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUsersInfoById" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersInfoByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUsersInfoByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersInfoByIdSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersInfoUnderOrganSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUsersInfoUnderOrgan" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersInfoUnderOrganSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUsersInfoUnderOrganResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersInfoUnderOrganSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersInfoByDeptSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUsersInfoByDept" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersInfoByDeptSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUsersInfoByDeptResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersInfoByDeptSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUsersInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUsersInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersInfoSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserInfoStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateUserInfoStatus" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserInfoStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateUserInfoStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserInfoStatusSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="AddDepartmentSoapIn">
+    <wsdl:part name="parameters" element="tns:AddDepartment" />
+  </wsdl:message>
+  <wsdl:message name="AddDepartmentSoapOut">
+    <wsdl:part name="parameters" element="tns:AddDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddDepartmentSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDepartmentSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteDepartment" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDepartmentSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDepartmentSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDepartmentSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateDepartment" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDepartmentSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDepartmentSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDepartmentStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateDepartmentStatus" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDepartmentStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateDepartmentStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDepartmentStatusSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDepartmentById" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDepartmentByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentByIdSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDepartment" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentByLevelCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDepartmentByLevelCode" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentByLevelCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDepartmentByLevelCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentByLevelCodeSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetAllDepartmentSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllDepartment" />
+  </wsdl:message>
+  <wsdl:message name="GetAllDepartmentSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllDepartmentSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentsByParentIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDepartmentsByParentId" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentsByParentIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDepartmentsByParentIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDepartmentsByParentIdSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="AddPesitionSoapIn">
+    <wsdl:part name="parameters" element="tns:AddPesition" />
+  </wsdl:message>
+  <wsdl:message name="AddPesitionSoapOut">
+    <wsdl:part name="parameters" element="tns:AddPesitionResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddPesitionSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="DeletePetitionSoapIn">
+    <wsdl:part name="parameters" element="tns:DeletePetition" />
+  </wsdl:message>
+  <wsdl:message name="DeletePetitionSoapOut">
+    <wsdl:part name="parameters" element="tns:DeletePetitionResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeletePetitionSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePesitionSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePesition" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePesitionSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePesitionResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePesitionSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetPesitionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPesition" />
+  </wsdl:message>
+  <wsdl:message name="GetPesitionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPesitionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPesitionSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetPesitionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPesitions" />
+  </wsdl:message>
+  <wsdl:message name="GetPesitionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPesitionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPesitionsSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePesitionStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePesitionStatus" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePesitionStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePesitionStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePesitionStatusSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetPesitionsByLevelCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPesitionsByLevelCode" />
+  </wsdl:message>
+  <wsdl:message name="GetPesitionsByLevelCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPesitionsByLevelCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPesitionsByLevelCodeSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetPesitionsByOrganIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPesitionsByOrganId" />
+  </wsdl:message>
+  <wsdl:message name="GetPesitionsByOrganIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPesitionsByOrganIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPesitionsByOrganIdSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="AddUpdateLogSoapIn">
+    <wsdl:part name="parameters" element="tns:AddUpdateLog" />
+  </wsdl:message>
+  <wsdl:message name="AddUpdateLogSoapOut">
+    <wsdl:part name="parameters" element="tns:AddUpdateLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddUpdateLogSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUpdateLogSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteUpdateLog" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUpdateLogSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteUpdateLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteUpdateLogSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUpdateLogSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllUpdateLog" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUpdateLogSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllUpdateLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUpdateLogSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetNoUpdateLogIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNoUpdateLogId" />
+  </wsdl:message>
+  <wsdl:message name="GetNoUpdateLogIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNoUpdateLogIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNoUpdateLogIdSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="EAMSGetLicenseSoapIn">
+    <wsdl:part name="parameters" element="tns:EAMSGetLicense" />
+  </wsdl:message>
+  <wsdl:message name="EAMSGetLicenseSoapOut">
+    <wsdl:part name="parameters" element="tns:EAMSGetLicenseResponse" />
+  </wsdl:message>
+  <wsdl:message name="EAMSGetLicenseSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="BuildValidateCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:BuildValidateCode" />
+  </wsdl:message>
+  <wsdl:message name="BuildValidateCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:BuildValidateCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="BuildValidateCodeSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetValidateCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetValidateCode" />
+  </wsdl:message>
+  <wsdl:message name="GetValidateCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetValidateCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetValidateCodeSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetValidateCodeByUserIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetValidateCodeByUserId" />
+  </wsdl:message>
+  <wsdl:message name="GetValidateCodeByUserIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetValidateCodeByUserIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetValidateCodeByUserIdSecurityHeader">
+    <wsdl:part name="SecurityHeader" element="tns:SecurityHeader" />
+  </wsdl:message>
+  <wsdl:portType name="Organ_InterfaceSoap">
+    <wsdl:operation name="AddOrginfo">
+      <wsdl:input message="tns:AddOrginfoSoapIn" />
+      <wsdl:output message="tns:AddOrginfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOrginfo">
+      <wsdl:input message="tns:DeleteOrginfoSoapIn" />
+      <wsdl:output message="tns:DeleteOrginfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganNextLevelCode">
+      <wsdl:input message="tns:GetOrganNextLevelCodeSoapIn" />
+      <wsdl:output message="tns:GetOrganNextLevelCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeptmentNextLevelCode">
+      <wsdl:input message="tns:GetDeptmentNextLevelCodeSoapIn" />
+      <wsdl:output message="tns:GetDeptmentNextLevelCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrginfo">
+      <wsdl:input message="tns:UpdateOrginfoSoapIn" />
+      <wsdl:output message="tns:UpdateOrginfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrginfo">
+      <wsdl:input message="tns:GetOrginfoSoapIn" />
+      <wsdl:output message="tns:GetOrginfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubOrginfoById">
+      <wsdl:input message="tns:GetSubOrginfoByIdSoapIn" />
+      <wsdl:output message="tns:GetSubOrginfoByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrginfoByRoot">
+      <wsdl:input message="tns:GetOrginfoByRootSoapIn" />
+      <wsdl:output message="tns:GetOrginfoByRootSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrginfoByLevelcode">
+      <wsdl:input message="tns:GetOrginfoByLevelcodeSoapIn" />
+      <wsdl:output message="tns:GetOrginfoByLevelcodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrginfoStatus">
+      <wsdl:input message="tns:UpdateOrginfoStatusSoapIn" />
+      <wsdl:output message="tns:UpdateOrginfoStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUserInfo">
+      <wsdl:input message="tns:AddUserInfoSoapIn" />
+      <wsdl:output message="tns:AddUserInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserinfo">
+      <wsdl:input message="tns:DeleteUserinfoSoapIn" />
+      <wsdl:output message="tns:DeleteUserinfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserInfo">
+      <wsdl:input message="tns:UpdateUserInfoSoapIn" />
+      <wsdl:output message="tns:UpdateUserInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersInfoById">
+      <wsdl:input message="tns:GetUsersInfoByIdSoapIn" />
+      <wsdl:output message="tns:GetUsersInfoByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersInfoUnderOrgan">
+      <wsdl:input message="tns:GetUsersInfoUnderOrganSoapIn" />
+      <wsdl:output message="tns:GetUsersInfoUnderOrganSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersInfoByDept">
+      <wsdl:input message="tns:GetUsersInfoByDeptSoapIn" />
+      <wsdl:output message="tns:GetUsersInfoByDeptSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersInfo">
+      <wsdl:input message="tns:GetUsersInfoSoapIn" />
+      <wsdl:output message="tns:GetUsersInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <wsdl:input message="tns:ChangePasswordSoapIn" />
+      <wsdl:output message="tns:ChangePasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserInfoStatus">
+      <wsdl:input message="tns:UpdateUserInfoStatusSoapIn" />
+      <wsdl:output message="tns:UpdateUserInfoStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDepartment">
+      <wsdl:input message="tns:AddDepartmentSoapIn" />
+      <wsdl:output message="tns:AddDepartmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDepartment">
+      <wsdl:input message="tns:DeleteDepartmentSoapIn" />
+      <wsdl:output message="tns:DeleteDepartmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDepartment">
+      <wsdl:input message="tns:UpdateDepartmentSoapIn" />
+      <wsdl:output message="tns:UpdateDepartmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDepartmentStatus">
+      <wsdl:input message="tns:UpdateDepartmentStatusSoapIn" />
+      <wsdl:output message="tns:UpdateDepartmentStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentById">
+      <wsdl:input message="tns:GetDepartmentByIdSoapIn" />
+      <wsdl:output message="tns:GetDepartmentByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartment">
+      <wsdl:input message="tns:GetDepartmentSoapIn" />
+      <wsdl:output message="tns:GetDepartmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentByLevelCode">
+      <wsdl:input message="tns:GetDepartmentByLevelCodeSoapIn" />
+      <wsdl:output message="tns:GetDepartmentByLevelCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDepartment">
+      <wsdl:input message="tns:GetAllDepartmentSoapIn" />
+      <wsdl:output message="tns:GetAllDepartmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentsByParentId">
+      <wsdl:input message="tns:GetDepartmentsByParentIdSoapIn" />
+      <wsdl:output message="tns:GetDepartmentsByParentIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPesition">
+      <wsdl:input message="tns:AddPesitionSoapIn" />
+      <wsdl:output message="tns:AddPesitionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePetition">
+      <wsdl:input message="tns:DeletePetitionSoapIn" />
+      <wsdl:output message="tns:DeletePetitionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePesition">
+      <wsdl:input message="tns:UpdatePesitionSoapIn" />
+      <wsdl:output message="tns:UpdatePesitionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPesition">
+      <wsdl:input message="tns:GetPesitionSoapIn" />
+      <wsdl:output message="tns:GetPesitionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPesitions">
+      <wsdl:input message="tns:GetPesitionsSoapIn" />
+      <wsdl:output message="tns:GetPesitionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePesitionStatus">
+      <wsdl:input message="tns:UpdatePesitionStatusSoapIn" />
+      <wsdl:output message="tns:UpdatePesitionStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPesitionsByLevelCode">
+      <wsdl:input message="tns:GetPesitionsByLevelCodeSoapIn" />
+      <wsdl:output message="tns:GetPesitionsByLevelCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPesitionsByOrganId">
+      <wsdl:input message="tns:GetPesitionsByOrganIdSoapIn" />
+      <wsdl:output message="tns:GetPesitionsByOrganIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUpdateLog">
+      <wsdl:input message="tns:AddUpdateLogSoapIn" />
+      <wsdl:output message="tns:AddUpdateLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUpdateLog">
+      <wsdl:input message="tns:DeleteUpdateLogSoapIn" />
+      <wsdl:output message="tns:DeleteUpdateLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUpdateLog">
+      <wsdl:input message="tns:GetAllUpdateLogSoapIn" />
+      <wsdl:output message="tns:GetAllUpdateLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNoUpdateLogId">
+      <wsdl:input message="tns:GetNoUpdateLogIdSoapIn" />
+      <wsdl:output message="tns:GetNoUpdateLogIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EAMSGetLicense">
+      <wsdl:input message="tns:EAMSGetLicenseSoapIn" />
+      <wsdl:output message="tns:EAMSGetLicenseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BuildValidateCode">
+      <wsdl:input message="tns:BuildValidateCodeSoapIn" />
+      <wsdl:output message="tns:BuildValidateCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetValidateCode">
+      <wsdl:input message="tns:GetValidateCodeSoapIn" />
+      <wsdl:output message="tns:GetValidateCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetValidateCodeByUserId">
+      <wsdl:input message="tns:GetValidateCodeByUserIdSoapIn" />
+      <wsdl:output message="tns:GetValidateCodeByUserIdSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Organ_InterfaceSoap" type="tns:Organ_InterfaceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+    <wsdl:operation name="AddOrginfo">
+      <soap:operation soapAction="http://tempuri.org/AddOrginfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AddOrginfoSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOrginfo">
+      <soap:operation soapAction="http://tempuri.org/DeleteOrginfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeleteOrginfoSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganNextLevelCode">
+      <soap:operation soapAction="http://tempuri.org/GetOrganNextLevelCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetOrganNextLevelCodeSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeptmentNextLevelCode">
+      <soap:operation soapAction="http://tempuri.org/GetDeptmentNextLevelCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetDeptmentNextLevelCodeSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrginfo">
+      <soap:operation soapAction="http://tempuri.org/UpdateOrginfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateOrginfoSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrginfo">
+      <soap:operation soapAction="http://tempuri.org/GetOrginfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetOrginfoSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubOrginfoById">
+      <soap:operation soapAction="http://tempuri.org/GetSubOrginfoById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetSubOrginfoByIdSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrginfoByRoot">
+      <soap:operation soapAction="http://tempuri.org/GetOrginfoByRoot" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetOrginfoByRootSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrginfoByLevelcode">
+      <soap:operation soapAction="http://tempuri.org/GetOrginfoByLevelcode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetOrginfoByLevelcodeSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOrginfoStatus">
+      <soap:operation soapAction="http://tempuri.org/UpdateOrginfoStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateOrginfoStatusSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserInfo">
+      <soap:operation soapAction="http://tempuri.org/AddUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AddUserInfoSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserinfo">
+      <soap:operation soapAction="http://tempuri.org/DeleteUserinfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeleteUserinfoSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserInfo">
+      <soap:operation soapAction="http://tempuri.org/UpdateUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateUserInfoSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersInfoById">
+      <soap:operation soapAction="http://tempuri.org/GetUsersInfoById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetUsersInfoByIdSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersInfoUnderOrgan">
+      <soap:operation soapAction="http://tempuri.org/GetUsersInfoUnderOrgan" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetUsersInfoUnderOrganSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersInfoByDept">
+      <soap:operation soapAction="http://tempuri.org/GetUsersInfoByDept" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetUsersInfoByDeptSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersInfo">
+      <soap:operation soapAction="http://tempuri.org/GetUsersInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetUsersInfoSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap:operation soapAction="http://tempuri.org/ChangePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ChangePasswordSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserInfoStatus">
+      <soap:operation soapAction="http://tempuri.org/UpdateUserInfoStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateUserInfoStatusSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:LoginSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDepartment">
+      <soap:operation soapAction="http://tempuri.org/AddDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AddDepartmentSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDepartment">
+      <soap:operation soapAction="http://tempuri.org/DeleteDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeleteDepartmentSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDepartment">
+      <soap:operation soapAction="http://tempuri.org/UpdateDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateDepartmentSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDepartmentStatus">
+      <soap:operation soapAction="http://tempuri.org/UpdateDepartmentStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateDepartmentStatusSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentById">
+      <soap:operation soapAction="http://tempuri.org/GetDepartmentById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetDepartmentByIdSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartment">
+      <soap:operation soapAction="http://tempuri.org/GetDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetDepartmentSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentByLevelCode">
+      <soap:operation soapAction="http://tempuri.org/GetDepartmentByLevelCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetDepartmentByLevelCodeSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDepartment">
+      <soap:operation soapAction="http://tempuri.org/GetAllDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAllDepartmentSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartmentsByParentId">
+      <soap:operation soapAction="http://tempuri.org/GetDepartmentsByParentId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetDepartmentsByParentIdSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPesition">
+      <soap:operation soapAction="http://tempuri.org/AddPesition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AddPesitionSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePetition">
+      <soap:operation soapAction="http://tempuri.org/DeletePetition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeletePetitionSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePesition">
+      <soap:operation soapAction="http://tempuri.org/UpdatePesition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdatePesitionSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPesition">
+      <soap:operation soapAction="http://tempuri.org/GetPesition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPesitionSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPesitions">
+      <soap:operation soapAction="http://tempuri.org/GetPesitions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPesitionsSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePesitionStatus">
+      <soap:operation soapAction="http://tempuri.org/UpdatePesitionStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdatePesitionStatusSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPesitionsByLevelCode">
+      <soap:operation soapAction="http://tempuri.org/GetPesitionsByLevelCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPesitionsByLevelCodeSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPesitionsByOrganId">
+      <soap:operation soapAction="http://tempuri.org/GetPesitionsByOrganId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPesitionsByOrganIdSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUpdateLog">
+      <soap:operation soapAction="http://tempuri.org/AddUpdateLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AddUpdateLogSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUpdateLog">
+      <soap:operation soapAction="http://tempuri.org/DeleteUpdateLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeleteUpdateLogSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUpdateLog">
+      <soap:operation soapAction="http://tempuri.org/GetAllUpdateLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAllUpdateLogSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNoUpdateLogId">
+      <soap:operation soapAction="http://tempuri.org/GetNoUpdateLogId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetNoUpdateLogIdSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EAMSGetLicense">
+      <soap:operation soapAction="http://tempuri.org/EAMSGetLicense" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:EAMSGetLicenseSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuildValidateCode">
+      <soap:operation soapAction="http://tempuri.org/BuildValidateCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:BuildValidateCodeSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetValidateCode">
+      <soap:operation soapAction="http://tempuri.org/GetValidateCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetValidateCodeSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetValidateCodeByUserId">
+      <soap:operation soapAction="http://tempuri.org/GetValidateCodeByUserId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetValidateCodeByUserIdSecurityHeader" part="SecurityHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Organ_Interface">
+    <wsdl:port name="Organ_InterfaceSoap" binding="tns:Organ_InterfaceSoap">
+      <soap:address location="http://59.42.10.25:8001/Admin/WebServices/Organ_Interface.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

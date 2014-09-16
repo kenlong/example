@@ -1,0 +1,22 @@
+<?php
+return array(
+	'APP_DEBUG'				=> true,				// 是否开启调试模式
+	'URL_DISPATCH_ON'       => false,				// 是否启用Dispatcher	
+	'LOG_RECORD'			=> true,				//记录日志
+	
+	/* 数据库设置 */
+    'DB_TYPE'               => 'mssql',     		// 数据库类型
+	'DB_HOST'               => '(local)', 	// 服务器地址
+	'DB_NAME'               => 'xzd_fgy',    		// 数据库名
+	'DB_USER'               => 'sa',      			// 用户名
+	'DB_PWD'                => 'xzd87652184',          	// 密码
+	'DB_PORT'               => '',					// 端口
+	'DB_PREFIX'             => 'web_',    			// 数据库表前缀
+	'DB_SUFFIX'             => '',          		// 数据库表后缀
+    'DB_FIELDTYPE_CHECK'    => false,       		// 是否进行字段类型检查
+    'DB_FIELDS_CACHE'       => true,        		// 启用字段缓存
+    'DB_CHARSET'            => 'GB2312',     		// 数据库编码默认采用utf8
+    'DB_DEPLOY_TYPE'        => 0, 					// 数据库部署方式:0 集中式(单一服务器),1 分布式(主从服务器)
+    'DB_RW_SEPARATE'        => false,       		// 数据库读写是否分离 主从式有效
+);
+?>

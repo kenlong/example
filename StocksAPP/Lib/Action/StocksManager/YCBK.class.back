@@ -1,0 +1,1015 @@
+<?php
+import("CRC");
+import("SerialPort");
+
+define ("COM_TO_NET",true);
+class YCBK
+{
+	/**
+	 * socket句柄
+	 *
+	 * @var resource
+	 */
+	private $socket = null;
+	/**
+	 * 设备的IP
+	 *
+	 * @var string
+	 */
+	private $host = "0.0.0.0";
+	/**
+	 * socket端口
+	 *
+	 * @var int
+	 */
+	private $port = 0;
+	/**
+	 * 设备的串口
+	 *
+	 * @var int
+	 */
+	private $comPort = 1;
+	/**
+	 * com to net 方式
+	 *
+	 * @var unknown_type
+	 */
+	private $comToNetType = '' ;
+	/**
+	 * 设备返回的超时时间,单位为秒
+	 *
+	 * @var int
+	 */
+	private $timeOut = 3;
+	/**
+	 * 等待设备响应时间
+	 *
+	 * @var float
+	 */
+	private $waitTime = 0.2;
+	/**
+	 * 错误信息
+	 *
+	 * @var string
+	 */
+	private $errors;
+
+	private $serial = null;
+	/**
+	 * 构造函数
+	 *
+	 * @param string $host
+	 * @param int $port
+	 * @param string $comPort
+	 */
+	public function __construct($host = "0.0.0.0",$port = 0,$comPort = 'COM1',$comToNetType='Type1')
+	{
+		$this->host = $host;
+		$this->port = $port;
+		$this->comToNetType = $comToNetType ;
+		if (preg_match("@^COM(\d+):?$@i", $comPort, $matches))
+		{
+			$this->comPort = $matches[1] - 1;
+		}
+
+		$this->open();
+	}
+
+	/**
+	 * 关闭socket连接
+	 *
+	 */
+	public function __destruct()
+	{
+		//if (is_resource($this->socket))
+			$this->close();
+	}
+
+	/**
+	 * pc机查询主控器开关状态
+	 *
+	 * @param int $deviceAddress
+	 * @return array | bool
+	 */
+	public function querySwitchStatus($deviceAddress)
+	{
+
+		if ($deviceAddress > 255 || $deviceAddress < 1) return false;
+		$command = 0x0A;
+		$pack = pack("CCC",$deviceAddress,$command,0x00);
+		$CRC = CRC::crc16Two($pack);
+		$pack .= pack("CC",$CRC['h'],$CRC['l']);
+
+		if ($this->send($pack) === false)
+			return false;
+
+		$result = $this->read();
+		if (false === $result)
+			return false;
+
+		$len = strlen($result)	;
+
+		$data = unpack("C*",$result);
+
+		if ($data[1] != $deviceAddress || $data[2] != $command)
+			return false;
+
+		$check = CRC::crc16Two(substr($result,0,$len- 2));
+
+
+		if ($check['l'] != $data[$len-1] || $check['h'] != $data[$len])
+			return false;
+
+		unset($data[1]);
+		unset($data[2]);
+		unset($data[3]);
+		unset($data[$len-1]);
+		unset($data[$len]);
+		$return = array();
+		$i = 1;
+		foreach ($data as $item)
+		{
+			$status = array();
+			switch ($item)
+			{
+				case 0xBF: //A面有表而(B面空)
+					$status['A'] = 'Y';
+					$status['B'] = 'N';
+					break;
+				case 0xFD:	//B面有表而(A面空)
+					$status['A'] = 'N';
+					$status['B'] = 'Y';
+					break;
+				case 0xBD:	//A面B面都有表
+					$status['A'] = 'Y';
+					$status['B'] = 'Y';
+					break;
+				case 0xFF:	//A面B面都没挂表
+					$status['A'] = 'N';
+					$status['B'] = 'N';
+					break;
+				default:
+					$status['A'] = 'E';
+					$status['B'] = 'E';
+			}
+			$return[$i] = $status;
+			$i++;
+		}
+
+		return $return;
+	}
+
+	/**
+	 * pc机控制挂表状态指示灯,Y:有表,N:空表位,U:挂表,F:有表不挂表,D:空表不挂表
+	 * array(
+	 * 		'A' => 'U',
+	 * 		'B' => 'N')
+	 *
+	 * @param int $deviceAddress
+	 * @param array $status
+	 * @return bool
+	 */
+	public function uploadMeterStateLight($deviceAddress,$status)
+	{
+		if ($deviceAddress > 255 || $deviceAddress < 1) return false;
+		if (!is_array($status)) return false;
+		$command = 0x0B;
+		$dataLen = count($status);
+		$data = '';
+				
+		foreach ($status as $item)
+		{
+			$code = -1;
+			if ($item['A'] == 'U' && $item['B'] == 'N') //A面挂表(B面空)点亮灯
+				$code = 0x7F;
+			elseif ($item['A'] == 'U' && $item['B'] == 'Y')	//A面挂表(B面有表)点亮灯
+				$code = 0x7D;
+			elseif ($item['A'] == 'N' && $item['B'] == 'U')	//B面挂表(A面空)点亮灯
+				$code = 0xFE;
+			elseif ($item['A'] == 'Y' && $item['B'] == 'U')	//B面挂表(A面有表)点亮灯
+				$code = 0xBE;
+			elseif ($item['A'] == 'U' && $item['B'] == 'U')	//A面B面挂表点亮灯
+				$code = 0x7E;
+			elseif ($item['A'] == 'F' && $item['B'] != 'F')	//A面有表而不挂表
+				$code = 0xBF;
+			elseif ($item['A'] != 'F' && $item['B'] == 'F')	//B面有表而不挂表
+				$code = 0xFD;
+			elseif ($item['A'] == 'F' && $item['B'] == 'F')	//A面B面有表而不挂表
+				$code = 0xBD;
+			elseif ($item['A'] == 'D' && $item['B'] == 'D')	//A面B面空表位而不挂表
+				$code = 0xFF;
+			else
+				return false;
+			
+			$i++;
+			
+			$data .= pack("C",$code);
+		}
+
+		//$packLen = $dataLen+3;
+		//$packFormat = "C{$packLen}";
+		$pack = pack("C3",$deviceAddress,$command,$dataLen);
+		$pack .= $data;
+		$CRC = CRC::crc16Two($pack);
+		$pack .= pack("CC",$CRC['h'],$CRC['l']);
+		
+		
+		if ($this->send($pack) === false)
+			return false;
+		return $this->checkResult($deviceAddress,$command);
+	}
+
+	/**
+	 * pc机控制挂表入库时单独点亮要入库表位指示灯
+	 * @param int $deviceAddress
+	 * @param string $AorB 只能够为'A'或者'B'
+	 * @param int $position
+	 * @return bool
+	 * @author kenlong
+	*/
+	public function onlyOneUploadMeterLightOn($deviceAddress,$AorB,$position)
+	{
+		if ($deviceAddress > 255 || $deviceAddress < 1) return false;
+		if ($AorB != 'A' && $AorB != 'B') return false;
+		if ('A' == $AorB)
+			$AorB = 0x01;
+		else
+			$AorB = 0x00;
+		$command  = 0x1C;
+		$pack = pack("C5",$deviceAddress,$command,0x02,$AorB,$position);
+		$CRC = CRC::crc16Two($pack);
+		$pack .= pack("CC",$CRC['h'],$CRC['l']);
+		if ($this->send($pack) === false)
+			return false;
+		return $this->checkResult($deviceAddress,$command);
+	}
+
+
+	/**
+	 * pc机控制表架单个挂表指示灯熄灭
+	 *
+	 * @param int $deviceAddress
+	 * @param string $AorB 只能够为'A'或者'B'
+	 * @param int $position
+	 * @return bool
+	 */
+	public function onlyOneUploadMeterLightOff($deviceAddress,$AorB,$position)
+	{
+		//system_out("1  A or B : " . $AorB . " Position : " . $position);
+		if ($deviceAddress > 255 || $deviceAddress < 1) return false;
+		if ($AorB != 'A' && $AorB != 'B') return false;
+		if ('A' == $AorB)
+			$AorB = 0x01;
+		else
+			$AorB = 0x00;
+		$command  = 0x0C;
+		//system_out("A or B : " . $AorB . " Position : " . $position);
+		//return false;
+		$pack = pack("C5",$deviceAddress,$command,0x02,$AorB,$position);
+		$CRC = CRC::crc16Two($pack);
+		//system_out(print_r($CRC,true));
+		$pack .= pack("CC",$CRC['h'],$CRC['l']);
+		if ($this->send($pack) === false)
+			return false;
+		return $this->checkResult($deviceAddress,$command);
+	}
+
+	/**
+	 * pc机控制退出挂表状态
+	 *
+	 * @param int $deviceAddress
+	 * @return bool
+	 */
+	public function exitUploadMeterState($deviceAddress)
+	{
+		if ($deviceAddress > 255 || $deviceAddress < 1) return false;
+		$command = 0x0D;
+		$pack = pack("C3",$deviceAddress,$command,0x00);
+		$CRC = CRC::crc16Two($pack);
+		$pack .= pack("CC",$CRC['h'],$CRC['l']);
+		if ($this->send($pack) === false)
+			return false;
+		return $this->checkResult($deviceAddress,$command);
+	}
+
+	/**
+	 * pc机控制取表指示灯,Y:有表,N:空表位,D:取表,F:有表不取表,U:空表不取表
+	 *
+	 * @param int $deviceAddress
+	 * @param array $status
+	 * @return bool
+	 */
+	public function downloadMeterStateLight($deviceAddress,$status)
+	{
+		if ($deviceAddress > 255 || $deviceAddress < 1) return false;
+		if (!is_array($status)) return false;
+		$command = 0x0E;
+		$dataLen = count($status);
+		$data = '';
+		$temp = '' ;
+		foreach ($status as $item)
+		{
+			$code = -1;
+			if ($item['A'] == 'D' && $item['B'] == 'N') //A面取表(B面无表)点亮灯
+				$code = 0x3F;
+			elseif ($item['A'] == 'D' && $item['B'] == 'Y')	//A面取表(B面有表)点亮灯
+				$code = 0x3D;
+			elseif ($item['A'] == 'N' && $item['B'] == 'D')	//B面取表(A面无表)点亮灯
+				$code = 0xFC;
+			elseif ($item['A'] == 'Y' && $item['B'] == 'D')	//B面取表(A面有表)点亮灯
+				$code = 0xBC;
+			elseif ($item['A'] == 'D' && $item['B'] == 'D')	//A面B面都取表点亮灯
+				$code = 0x3C;
+			elseif ($item['A'] == 'F' && $item['B'] != 'F')	//A面有表而不取表
+				$code = 0xBF;
+			elseif ($item['A'] != 'F' && $item['B'] == 'F')	//B面有表而不取表
+				$code = 0xFD;
+			elseif ($item['A'] == 'F' && $item['B'] == 'F')	//A面B面有表而不取表
+				$code = 0xBD;
+			elseif ($item['A'] == 'U' && $item['B'] == 'U')	//A面B面空表位而不取表
+				$code = 0xFF;
+			else
+				return false;
+			$data .= pack("C",$code);
+		}
+				
+		//$packLen = $dataLen+3;
+		//$packFormat = "C{$packLen}";
+		$pack = pack("C3",$deviceAddress,$command,$dataLen);
+		$pack .= $data;
+		$CRC = CRC::crc16Two($pack);
+		$pack .= pack("CC",$CRC['h'],$CRC['l']);
+		if ($this->send($pack) === false)
+			return false;
+		return $this->checkResult($deviceAddress,$command);
+	}
+
+	/**
+	 * pc机控制退出取表状态
+	 *
+	 * @param int $deviceAddress
+	 * @return bool
+	 */
+	public function exitDownloadMeterState($deviceAddress)
+	{
+		if ($deviceAddress > 255 || $deviceAddress < 1) return false;
+		$command = 0x0F;
+		$pack = pack("C3",$deviceAddress,$command,0x00);
+		$CRC = CRC::crc16Two($pack);
+		$pack .= pack("CC",$CRC['h'],$CRC['l']);
+		if ($this->send($pack) === false)
+			return false;
+		return $this->checkResult($deviceAddress,$command);
+	}
+
+	/**
+	 * 休眠状态非法取表报警
+	 *
+	 * @param int $deviceAddress
+	 * @return bool
+	 */
+	public function warningForInvaildDownloadMeterInSleep($deviceAddress)
+	{
+		if ($deviceAddress > 255 || $deviceAddress < 1) return false;
+		$command = 0x10;
+		$pack = pack("C3",$deviceAddress,$command,0x00);
+		$CRC = CRC::crc16Two($pack);
+		$pack .= pack("CC",$CRC['h'],$CRC['l']);
+		if ($this->send($pack) === false)
+			return false;
+		return $this->checkResult($deviceAddress,$command);
+	}
+
+	/**
+	 * 读版本号
+	 *
+	 * @param int $deviceAddress
+	 * @return string | bool
+	 */
+	public function getVersionInfo($deviceAddress)
+	{
+		if ($deviceAddress > 255 || $deviceAddress < 1) return false;
+		$command = 0x11;
+		$pack = pack("C3",$deviceAddress,$command,0x00);
+		$CRC = CRC::crc16Two($pack);
+		$pack .= pack("CC",$CRC['h'],$CRC['l']);
+		if ($this->send($pack) === false)
+			return false;
+
+		$result = $this->read();
+		if (false === $result)
+			return false;
+		$len = strlen($result)	;
+
+		$dataLen = $len - 5;
+		if ($dataLen < 5) return false;
+		$check = CRC::crc16Two(substr($result,0,$len- 2));
+		$uformat = "Cdevice/Ccommand/Cdlen/A{$dataLen}data/Ch/Cl";
+		$unpack = unpack($uformat,$result);
+		if ($deviceAddress != $unpack['device'] || $command != $unpack['command']) return false;
+		if ($check['h'] != $unpack['h'] || $check['l'] != $unpack['l'])
+			return false;
+		return $unpack['data'];
+	}
+
+	/**
+	 * PC控制表架报警
+	 *
+	 * @param int $deviceAddress
+	 * @return bool
+	 */
+	public function setWarning($deviceAddress)
+	{
+		if ($deviceAddress > 255 || $deviceAddress < 1) return false;
+		$command = 0x12;
+		$pack = pack("C3",$deviceAddress,$command,0x00);
+		$CRC = CRC::crc16Two($pack);
+		$pack .= pack("CC",$CRC['h'],$CRC['l']);
+		if ($this->send($pack) === false)
+			return false;
+		return $this->checkResult($deviceAddress,$command);
+	}
+
+	/**
+	 * PC控制表架退出报警
+	 *
+	 * @param int $deviceAddress
+	 * @return bool
+	 */
+	public function exitWarning($deviceAddress)
+	{
+		if ($deviceAddress > 255 || $deviceAddress < 1) return false;
+		$command = 0x13;
+		$pack = pack("C3",$deviceAddress,$command,0x00);
+		$CRC = CRC::crc16Two($pack);
+		$pack .= pack("CC",$CRC['h'],$CRC['l']);
+		if ($this->send($pack) === false)
+			return false;
+		return $this->checkResult($deviceAddress,$command);
+	}
+
+	/**
+	 * pc控制表架AB照明灯开
+	 *
+	 * @param unknown_type $deviceAddress
+	 * @return unknown
+	 * @author kenlong
+	 */
+	public function openSunlight($deviceAddress)
+	{
+		if ($deviceAddress > 255 || $deviceAddress < 1) return false;
+		$command = 0x19;
+		$pack = pack("C3",$deviceAddress,$command,0x00);
+		$CRC = CRC::crc16Two($pack);
+		$pack .= pack("CC",$CRC['h'],$CRC['l']);
+		if ($this->send($pack) === false)
+			return false;
+
+		return $this->checkResult($deviceAddress,$command);
+	}
+
+	/**
+	 * pc控制表架A照明灯开
+	 *
+	 * @param unknown_type $deviceAddress
+	 * @return unknown
+	 * @author kenlong
+	 */
+	public function openSunlightA($deviceAddress)
+	{
+		if ($deviceAddress > 255 || $deviceAddress < 1) return false;
+		$command = 0x14;
+		$pack = pack("C3",$deviceAddress,$command,0x00);
+		$CRC = CRC::crc16Two($pack);
+		$pack .= pack("CC",$CRC['h'],$CRC['l']);
+		if ($this->send($pack) === false)
+			return false;
+		return $this->checkResult($deviceAddress,$command);
+	}
+
+	/**
+	 * pc控制表架B照明灯开
+	 *
+	 * @param unknown_type $deviceAddress
+	 * @return unknown
+	 * @author kenlong
+	 */
+	public function openSunlightB($deviceAddress)
+	{
+		if ($deviceAddress > 255 || $deviceAddress < 1) return false;
+		$command = 0x15;
+		$pack = pack("C3",$deviceAddress,$command,0x00);
+		$CRC = CRC::crc16Two($pack);
+		$pack .= pack("CC",$CRC['h'],$CRC['l']);
+		if ($this->send($pack) === false)
+			return false;
+		return $this->checkResult($deviceAddress,$command);
+	}
+
+	/**
+	 * pc控制表架AB照明灯关
+	 *
+	 * @param unknown_type $deviceAddress
+	 * @return unknown
+	 * @author kenlong
+	 */
+	public function closeSunlight($deviceAddress)
+	{
+		if ($deviceAddress > 255 || $deviceAddress < 1) return false;
+		$command = 0x18;
+		$pack = pack("C3",$deviceAddress,$command,0x00);
+		$CRC = CRC::crc16Two($pack);
+		$pack .= pack("CC",$CRC['h'],$CRC['l']);
+		if ($this->send($pack) === false)
+			return false;
+		return $this->checkResult($deviceAddress,$command);
+	}
+
+	/**
+	 * pc控制表架A照明灯关
+	 *
+	 * @param unknown_type $deviceAddress
+	 * @return unknown
+	 * @author kenlong
+	 */
+	public function closeSunlightA($deviceAddress)
+	{
+		if ($deviceAddress > 255 || $deviceAddress < 1) return false;
+		$command = 0x16;
+		$pack = pack("C3",$deviceAddress,$command,0x00);
+		$CRC = CRC::crc16Two($pack);
+		$pack .= pack("CC",$CRC['h'],$CRC['l']);
+		if ($this->send($pack) === false)
+			return false;
+		return $this->checkResult($deviceAddress,$command);
+	}
+
+	/**
+	 * pc控制表架B照明灯关
+	 *
+	 * @param unknown_type $deviceAddress
+	 * @return unknown
+	 * @author kenlong
+	 */
+	public function closeSunlightB($deviceAddress)
+	{
+		if ($deviceAddress > 255 || $deviceAddress < 1) return false;
+		$command = 0x17;
+		$pack = pack("C3",$deviceAddress,$command,0x00);
+		$CRC = CRC::crc16Two($pack);
+		$pack .= pack("CC",$CRC['h'],$CRC['l']);
+		if ($this->send($pack) === false)
+			return false;
+		return $this->checkResult($deviceAddress,$command);
+	}
+	
+	
+/**
+	 * pc机查询行列状态
+	 *
+	 * @param int $deviceAddress
+	 * @return array | bool
+	 * @author kenlng
+	 *
+	 */
+	public function queryxNumyNum($deviceAddress)
+	{
+		if ($deviceAddress > 255 || $deviceAddress < 1) return false;
+		$command = 0x1A;
+		$pack = pack("CCC",$deviceAddress,$command,0x00);
+		$CRC = CRC::crc16Two($pack);
+		$pack .= pack("CC",$CRC['h'],$CRC['l']);
+
+		if ($this->send($pack) === false)
+			return false;
+		$result = $this->read();
+		if (false === $result)
+			return false;
+		$len = strlen($result)	;
+		$data = unpack("C*",$result);
+		if ($data[1] != $deviceAddress || $data[2] != $command)
+			return false;
+		$check = CRC::crc16Two(substr($result,0,$len- 2));
+		if ($check['l'] != $data[$len-1] || $check['h'] != $data[$len])
+			return false;
+
+		unset($data[1]);
+		unset($data[2]);
+		unset($data[3]);
+		unset($data[$len-1]);
+		unset($data[$len]);
+		
+		/*
+		foreach ($data as $item)
+		{
+			system_out("data:".$item);
+		}
+		*/
+		
+		$return["yNum"] = $data[0];
+		$return["xNum"] = $data[1];
+		return $return;
+	}
+
+
+	/**
+	 * 设置读写超时
+	 *
+	 * @param int $seconds
+	 * @return bool
+	 */
+	public function setTimeOut($seconds)
+	{
+		$this->timeOut = $seconds;
+		return true;
+	}
+
+	/**
+	 * 设置等待返回时间
+	 *
+	 * @param int $seconds
+	 * @return bool
+	 */
+	public function setWaitTime($seconds)
+	{
+		$this->waitTime = $seconds;
+		return true;
+	}
+
+	/**
+	 * 设置要连接的设备IP
+	 *
+	 * @param string $host
+	 * @return bool
+	 */
+	public function setHost($host)
+	{
+		if (is_resource($this->socket))
+		{
+			$this->setError("The device is already opened");
+			return false;
+		}
+
+		$this->host = $host;
+		return true;
+	}
+
+	/**
+	 * 设置连接设备的端口
+	 *
+	 * @param int $port
+	 * @return bool
+	 */
+	public function setPort($port)
+	{
+		if (is_resource($this->socket))
+		{
+			$this->setError("The device is already opened");
+			return false;
+		}
+
+		$this->port = $port;
+		return true;
+	}
+
+	/**
+	 * 设置设备使用的串口
+	 *
+	 * @param string $comPort
+	 * @return bool
+	 */
+	public function setComPort($comPort)
+	{
+		if (preg_match("@^COM(\d+):?$@i", $comPort, $matches))
+		{
+			$this->comPort = $matches[1] -1;
+		}else{
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * 打开设备
+	 *
+	 * @return bool
+	 */
+	public function open()
+	{
+		if (false === COM_TO_NET)
+		{
+			$com = $this->comPort + 1;
+			$comPort = "COM{$com}";
+			$this->serial =  new SerialPort();
+			$this->serial->autoflush = true;
+			$this->serial->deviceSet($comPort);
+			$this->serial->confFlowControl("none");
+			$this->serial->confRawMode(true);
+			$this->serial->confBaudRate(19200);
+			$this->serial->confParity("none");
+			$this->serial->confCharacterLength(8);
+			$this->serial->confStopBits(1);
+			$this->serial->deviceOpen();
+			return true;
+		}
+
+		if (is_resource($this->socket))
+		{
+			$this->setError("The device is already opened");
+			return false;
+		}
+
+		$this->socket = socket_create(AF_INET,SOCK_STREAM,SOL_TCP);
+
+		if ($this->socket < 0)
+		{
+			$error = "Open failed! reason: " . socket_strerror(socket_last_error());
+			$this->setError($error);
+			return false;
+		}
+
+		$result = socket_connect($this->socket,$this->host,$this->port);
+		if (false === $result)
+		{
+			$error = "Open failed! reason: " . socket_strerror(socket_last_error($this->socket));
+			$this->setError($error);
+			return false;
+		}
+
+		return true;
+	}
+
+	/**
+	 * 关闭设备
+	 *
+	 * @return bool
+	 */
+	public function close()
+	{
+		if (false === COM_TO_NET)
+		{
+			$this->serial->deviceClose();
+			return true;
+		}
+
+		if (is_resource($this->socket))
+			socket_close($this->socket);
+		$this->socket = null;
+		return true;
+	}
+
+	/**
+	 * 设置串口的参数
+	 *
+	 * @param int $baudRate
+	 * @param string $parity
+	 * @param int $characterLength
+	 * @param int $stop
+	 *
+	 * @return bool
+	 */
+	public function setSerialParameter($baudRate = 19200,$parity='N',$characterLength = 8,$stop = 1)
+	{
+		$cmd = '';
+		if($this->comToNetType!='Type2')
+		{
+			switch ($this->comPort)
+			{
+				case 0:
+					$cmd = pack("C2",0x00,0x04);
+					break;
+				case 1:
+					$cmd = pack("C2",0x00,0x05);
+					break;
+				case 2:
+					$cmd = pack("C2",0x00,0x06);
+					break;
+				case 3:
+					$cmd = pack("C2",0x00,0x07);
+					break;
+				default:
+					return false;
+			}
+		}
+		$pack = $cmd . pack("LaC2",$baudRate,$parity,$characterLength,$stop);
+
+		return $this->send($pack,true);
+	}
+
+	public function getSerialParameter()
+	{
+		$cmd = '';
+		if($this->comToNetType!='Type2')
+		{
+			switch ($this->comPort)
+			{
+				case 0:
+					$cmd = pack("C3",0x00,0x08,0x00);
+					break;
+				case 1:
+					$cmd = pack("C3",0x00,0x09,0x00);
+					break;
+				case 2:
+					$cmd = pack("C3",0x00,0x0A,0x00);
+					break;
+				case 3:
+					$cmd = pack("C3",0x00,0x0B,0x00);
+					break;
+				default:
+					return false;
+			}
+		}
+
+		if ($this->send($cmd,true))
+		{
+			$result = $this->read(128,true);
+			if (false === $result)
+				return false;
+
+			if (strlen($result) != 7)
+				return false;
+			$arr = unpack("LbaudRate/aparity/Clength/Cstop",$result);
+			return $arr;
+
+		}
+
+		return false;
+	}
+
+	/**
+	 * 发送数据
+	 *
+	 * @param string $data
+	 * @return bool
+	 */
+	protected function send($data,$command = false)
+	{
+		if (false === COM_TO_NET)
+		{
+			$this->serial->sendMessage($data,$this->waitTime);
+			return true;
+		}
+
+		if (!is_resource($this->socket))
+		{
+			$this->setError("Please call open function first!");
+			return false;
+		}
+
+		$sendData = '';
+		if($this->comToNetType!='Type2')
+		{
+			switch ($this->comPort)
+			{
+				case 0:
+					$sendData = pack("C2",0x00,0x00) . $data;
+					break;
+				case 1:
+					$sendData = pack("C2",0x00,0x01) . $data;
+					break;
+				case 2:
+					$sendData = pack("C2",0x00,0x02) . $data;
+					break;
+				case 3:
+					$sendData = pack("C2",0x00,0x03) . $data;
+					break;
+				default:
+					return false;
+	
+			}
+		}
+		else 
+		{
+			$sendData = $data ;
+		}
+		
+		if ($command) $sendData = $data;
+		$result = socket_write($this->socket,$sendData,strlen($sendData));
+		if (false === $result)
+		{
+			$error = "Write failed! reason: " . socket_strerror(socket_last_error($this->socket));
+			$this->setError($error);
+			return false;
+		}
+		//system_out("Send : " . print_r(unpack("C*",$sendData),true));
+		if (false === COM_TO_NET || false === $command)
+			usleep((int) ($this->waitTime * 1000000));
+		return true;
+	}
+
+	/**
+	 * 接受数据
+	 *
+	 * @param int $count
+	 * @param bool $command
+	 * @return string | bool
+	 */
+	protected function read($count = 128,$command = false)
+	{
+		if (false === COM_TO_NET)
+		{
+			return $this->serial->readPort();
+		}
+
+		if (!is_resource($this->socket))
+		{
+			$this->setError("Please call open function first!");
+			return false;
+		}
+
+		socket_set_nonblock($this->socket);
+		$content = '';
+		if ($this->timeOut)
+		{
+			$time = time();
+			$while = true;
+
+			while ($while)
+			{
+				$content = socket_read($this->socket,$count);
+				if (false === $content)
+				{
+					//$error = "Read failed! reason: " . socket_strerror(socket_last_error($this->socket));
+					//$this->setError($error);
+					//return false;
+				}elseif (strlen($content) > 1){
+					$while = false;
+				}
+
+				if ((time() - $time) >= $this->timeOut)
+	            {
+	                $this->setError("Read time out!");
+	                return false;
+	            }
+	            else
+	            {
+	                //sleep(1);
+	                //usleep(500000);
+	                continue;
+	            }
+			}
+		}else {
+			$content = socket_read($this->socket,$count);
+			if (false === $content)
+			{
+				$error = "Read failed! reason: " . socket_strerror(socket_last_error($this->socket));
+				$this->setError($error);
+				return false;
+			}
+		}
+		//system_out("Read Len :" . strlen($content));
+		if ($command)
+			return $content;
+		else
+			return substr($content,2);
+	}
+
+	/**
+	 * 设置错误
+	 *
+	 * @param string $error
+	 */
+	protected function setError($error)
+	{
+		$vorn = '['.date('Y-m-d H:i:s',time()). '] ';
+		$this->errors .= $vorn.$error."\n";
+	}
+
+	/**
+	 * 获取错误
+	 *
+	 * @return string
+	 */
+	public function getError()
+	{
+		$return = ($this->errors) ? $this->errors : '';
+        unset ($this->errors);
+        return $return;
+	}
+
+	/**
+	 * 检查返回是否正确
+	 *
+	 * @param int $deviceAddress
+	 * @param hex $command
+	 * @return bool
+	 */
+	protected function checkResult($deviceAddress,$command)
+	{
+		$result = $this->read();
+		if (false === $result)
+			return false;
+		$len = strlen($result)	;
+
+		$dataLen = $len - 5;
+		if ($dataLen < 5) return false;
+		$check = CRC::crc16Two(substr($result,0,$len- 2));
+		$uformat = "Cdevice/Ccommand/Cdlen/A{$dataLen}data/Cl/Ch";
+		$unpack = unpack($uformat,$result);
+		if ($deviceAddress != $unpack['device'] || $command != $unpack['command']) return false;
+		if ($check['h'] != $unpack['h'] || $check['l'] != $unpack['l'] || strtoupper($unpack['data']) != "WC OK")
+			return false;
+		return true;
+	}
+}
+?>

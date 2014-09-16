@@ -1,0 +1,1172 @@
+<?php
+import("XMLUtil","think.Util.XMLUtil");
+require_once(LIB_PATH.'\Utils\nusoap\nusoap.php');
+class ControlService 
+{
+	/**
+	 * 日志
+	 *
+	 * @var string
+	 */
+	
+	private $log;
+	/**
+	 * soap client
+	 *
+	 * @var nusoap_client
+	 */
+	
+	private $client;
+	
+	/**
+	 * 部门层级长度
+	 *
+	 * @var int
+	 */
+	private $length = 3;
+	
+	/**
+	 * 建立nusoap client
+	 *
+	 */
+	private function create($header='US000000000')
+	{
+		if(!$this->client)
+		{
+			//$this->client = new nusoap_client(LIB_PATH.'\Service\oa.wsdl', true);
+			//$this->client = new nusoap_client("http://wlpt.gyaip.cn:8788/WebServices/Organ_Interface.asmx?WSDL", true);
+			//$this->client = new nusoap_client("http://61.144.60.102:8787/admin/WebServices/Organ_Interface.asmx?WSDL", true);
+			//$this->client = new nusoap_client("http://59.42.10.25:8001/Admin/WebServices/Organ_Interface.asmx?WSDL", true);
+			$this->client = new nusoap_client("http://www.wuliucheng.com/Admin/WebServices/Organ_Interface.asmx?WSDL", true);
+			$this->client->soap_defencoding = 'utf-8';  
+			$this->client->decode_utf8 = false;
+			
+			$header = "<SecurityHeader xmlns=\"http://tempuri.org/\"><UserId>US000000000</UserId></SecurityHeader>";
+			$this->client->setHeaders($header);
+
+		}
+	}
+		
+	/**
+	 * control
+	 *
+	 * @param string $data
+	 * @param string $add
+	 * @return string
+	 */
+	public function query($data,$add='')
+	{
+		if(C("DEBUG_MODE")) $this->addLog("query::data:".$data);
+		if(C("DEBUG_MODE")) $this->addLog("query::add:".$add);
+		
+		try {
+			$xml = simplexml_load_string($data); 
+			$request = XMLUtil::XML2array($xml);
+			if(!$request)
+			{
+				$this->addLog("params error");
+				return "false";
+			}
+			
+			//建立soapclient
+			$this->create();
+			
+			//nusoap 参数
+			if($request["paramtype"]["type"]=='xml')
+				$params = array($request["paramtype"]["name"] => $add);
+			else
+				$params = $request["params"]; 
+				
+			//调用
+			$result = $this->client->call($request["fun"],array('parameters' =>$params), '', '');
+			if(C("DEBUG_MODE")) $this->addLog("query::result:".print_r($result));
+						
+			//节点名	
+			$name = $request["fun"]."Result";
+			$rs = $result[$name];
+			if($rs == '-2')
+			{
+				$this->addLog("access denied in query!");	
+				$rs = 'false';
+			}
+			
+			if(!$rs)
+				$rs = 'false';
+						
+			return $rs;
+		}catch (Exception $e)
+		{
+			if(C("DEBUG_MODE")) $this->addLog("query error:".print_r($e,true));
+			return 'false';
+		}
+	}
+	
+	/**
+	 * 添加OA组织机构
+	 *
+	 * @param string $data
+	 * @return string
+	 */
+	public function addOrgan($data)
+	{		
+		if(C("DEBUG_MODE")) $this->addLog("addOrgan::data:".$data);	
+		
+		$this->create();
+				
+		$params = array("orginxml"=>$data);		
+		$result = $this->client->call("AddOrginfo",array('parameters' =>$params), '', '');
+		$result = $result["AddOrginfoResult"];
+		if(!$result)
+			return 'false';
+		
+		if($result == '-2')
+		{
+			$this->addLog("access denied in addOrgan!");
+			return 'false';
+		}
+			
+		$rs = $this->addLog4OA($result,'Organ',1);
+		if(!$rs)
+			return 'false';	
+			
+		return $result;
+	}
+	
+	/**
+	 * 更改组织机构
+	 *
+	 * @param string $data
+	 * @return string
+	 */
+	public function updateOrgan($data)
+	{
+		if(C("DEBUG_MODE")) $this->addLog("updateOrgan::data:".$data);	
+		
+		$this->create();
+		
+		$params = array("orginxml"=>$data);		
+		$result = $this->client->call("UpdateOrginfo",array('parameters' =>$params), '', '');
+		$result = $result["UpdateOrginfoResult"];
+		if(!$result)
+			return 'false';
+		
+		if($result == '-2')
+		{
+			$this->addLog("access denied in updateOrgan!");
+			return 'false';
+		}	
+		
+		//--获取机构信息中的id
+		//将GBK替换成UTF-8,否则simplexml_load_string会失败
+		$data = str_replace("GBK","utf-8",$data);
+		
+		$xml = simplexml_load_string($data); 
+		$data = XMLUtil::XML2array($xml);
+		if(!$data)
+			return 'false';	
+		
+		$info = $this->getLogInfo($data["Node"]["property"]);	
+		
+		$rs = $this->addLog4OA($info["OrganId"],'Organ',2);
+		if(!$rs)
+			return 'false';		
+			
+		return 'true';
+	}
+	
+	/**
+	 * 删除机构
+	 *
+	 * @param string $data
+	 * @return string
+	 */
+	public function delOrgan($data)
+	{
+		if(C("DEBUG_MODE")) $this->addLog("delOrgan::data:".$data);	
+		
+		$this->create();
+		
+		$params = array("orginid"=>$data);		
+		$result = $this->client->call("DeleteOrginfo",array('parameters' =>$params), '', '');
+		$result = $result["DeleteOrginfoResult"];
+		if(!$result)
+			return 'false';
+		
+		if($result == '-2')
+		{
+			$this->addLog("access denied in delOrgan!");
+			return 'false';
+		}	
+			
+		$rs = $this->addLog4OA($data,'Organ',3);
+		if(!$rs)
+			return 'false';	
+			
+		return 'true';
+	}
+	
+	/**
+	 * 添加OA部门
+	 *
+	 * @param string $data
+	 * @return string
+	 */
+	public function addDept($data)
+	{	
+		if(C("DEBUG_MODE")) $this->addLog("addDept::data:".$data);	
+		
+		$this->create();
+		
+		$params = array("deptxml"=>$data);		
+		$result = $this->client->call("AddDepartment",array('parameters' =>$params), '', '');
+		$result = $result["AddDepartmentResult"];
+		if(!$result)
+			return 'false';
+
+		if($result == '-2')
+		{
+			$this->addLog("access denied in addDept!");
+			return 'false';
+		}
+			
+		$rs = $this->addLog4OA($result,'Department',1);
+		if(!$rs)
+			return 'false';	
+			
+		return $result;
+	}
+	
+	/**
+	 * 更改部门资料
+	 *
+	 * @param string $data
+	 * @return string
+	 */
+	public function updateDept($data)
+	{
+		if(C("DEBUG_MODE")) $this->addLog("updateDept::data:".$data);	
+		
+		$this->create();
+		
+		$params = array("deptxml"=>$data);		
+		$result = $this->client->call("UpdateDepartment",array('parameters' =>$params), '', '');
+		$result = $result["UpdateDepartmentResult"];
+		if(!$result)
+			return 'false';
+
+		if($result == '-2')
+		{
+			$this->addLog("access denied in updateDept!");
+			return 'false';
+		}	
+		
+		//--获取部门信息中的id
+		//将GBK替换成UTF-8,否则simplexml_load_string会失败
+		$data = str_replace("GBK","utf-8",$data);
+		
+		$xml = simplexml_load_string($data); 
+		$data = XMLUtil::XML2array($xml);
+		if(!$data)
+			return 'false';
+		$info = $this->getLogInfo($data["Node"]["property"]);	
+		
+		$rs = $this->addLog4OA($info["DeptId"],'Department',2);
+		if(!$rs)
+			return 'false';		
+			
+		return 'true';
+	}
+	
+	/**
+	 * 删除部门
+	 *
+	 * @param string $data
+	 * @return string
+	 */
+	public function delDept($data)
+	{
+		if(C("DEBUG_MODE")) $this->addLog("delDept::data:".$data);	
+		
+		$this->create();
+		
+		$params = array("deptId"=>$data);		
+		$result = $this->client->call("DeleteDepartment",array('parameters' =>$params), '', '');
+		$result = $result["DeleteDepartmentResult"];
+		if(!$result)
+			return 'false';
+
+		if($result == '-2')
+		{
+			$this->addLog("access denied in delDept!");
+			return 'false';
+		}		
+			
+		$rs = $this->addLog4OA($data,'Organ',3);
+		if(!$rs)
+			return 'false';		
+			
+		return 'true';
+	}
+	
+	/**
+	 * 添加员工
+	 *
+	 * @param string $data
+	 * @return string
+	 */
+	public function addMember($data)
+	{
+		if(C("DEBUG_MODE")) $this->addLog("addMember::data:".$data);	
+		
+		$this->create();
+		
+		$params = array("userxml"=>$data);		
+		$result = $this->client->call("AddUserInfo",array('parameters' =>$params), '', '');
+		$result = $result["AddUserInfoResult"];
+		if(!$result)
+			return 'false';
+
+		if($result == '-2')
+		{
+			$this->addLog("access denied in addMember!");
+			return 'false';
+		}		
+			
+		$employeeId	= $result ;
+			
+		//获取UserId
+		$params = array("userid"=>$employeeId);
+		$result = $this->client->call("GetUsersInfoById",array('parameters' =>$params), '', '');
+		
+		$result = $result["GetUsersInfoByIdResult"];
+			
+		//将GBK替换成UTF-8,否则simplexml_load_string会失败
+		$result = str_replace("GBK","utf-8",$result);
+		
+		$xml = simplexml_load_string($result); 
+		$rs = XMLUtil::XML2array($xml);
+		if(!$rs)
+			return 'false';
+		
+		$info = $this->getLogInfo($rs["Node"]["property"]);
+		
+		$userid = $info["UserId"];
+		
+		if(!$userid)
+			return 'false';
+						
+		$rs = $this->addLog4OA($employeeId,'Employee',1);
+		if(!$rs)
+			return 'false';	
+			
+		return $employeeId."*".$userid;
+	}
+	
+	/**
+	 * 更改员工
+	 *
+	 * @param string $data
+	 * @return string
+	 */
+	public function updateMember($data)
+	{
+		if(C("DEBUG_MODE")) $this->addLog("updateMember::data:".$data);	
+		
+		$this->create();
+		
+		$params = array("userxml"=>$data);		
+		$result = $this->client->call("UpdateUserInfo",array('parameters' =>$params), '', '');
+		$result = $result["UpdateUserInfoResult"];
+		if(!$result)
+			return 'false';
+
+		if($result == '-2')
+		{
+			$this->addLog("access denied in updateMember!");
+			return 'false';
+		}		
+			
+		//将GBK替换成UTF-8,否则simplexml_load_string会失败
+		$data = str_replace("GBK","utf-8",$data);
+		
+		$xml = simplexml_load_string($data); 
+		$data = XMLUtil::XML2array($xml);
+		if(!$data)
+			return 'false';
+				
+		$info = $this->getLogInfo($data["Node"]["property"]);	
+		
+		$rs = $this->addLog4OA($info["EmployeeId"],'Employee',2);
+		if(!$rs)
+			return 'false';					
+			
+		return $result;
+	}
+	
+	/**
+	 * 删除员工
+	 *
+	 * @param string $data
+	 * @return string
+	 */
+	public function delMember($data)
+	{
+		if(C("DEBUG_MODE")) $this->addLog("delMember::data:".$data);
+			
+		$this->create();
+		
+		$params = array("userid"=>$data);		
+		$result = $this->client->call("DeleteUserinfo",array('parameters' =>$params), '', '');
+		$result = $result["DeleteUserinfoResult"];
+		if(!$result)
+			return 'false';
+		
+		if($result == '-2')
+		{
+			$this->addLog("access denied in delMember!");
+			return 'false';
+		}	
+		
+		$rs = $this->addLog4OA($data,'Employee',3);
+		if(!$rs)
+			return 'false';		
+							
+		return 'true';
+	}
+	
+	/**
+	 * 生成OA日志
+	 *
+	 * @param string $data
+	 */
+	private function addLog4OA($objectid,$objectname,$methodname)
+	{
+		$this->create();
+		$createdate = date('Y-m-d H:i:s',time());
+		
+$request = <<<XML
+<?xml version="1.0" encoding="GBK" ?>
+<Root >
+	<Node name="UpdateLog" id="" >
+		<property name="RecordId" value="" />
+		<property name="ObjectId" value="$objectid" />
+		<property name="ObjectName" value="$objectname" />
+		<property name="MethodName" value="$methodname" />
+		<property name="CreateDate" value="$createdate" />
+		<property name="Operator" value="LHK" />
+	</Node>
+</Root>
+XML;
+		
+		$params = array("updatexml"=>$request);		
+		$result = $this->client->call("AddUpdateLog",array('parameters' =>$params), '', '');
+		$result = $result["AddUpdateLogResult"];
+		
+		if(C("DEBUG_MODE")) $this->addLog('insertlog:'.$request."\n result:".$result);
+		
+		return $result;
+	}
+	
+	
+	/**
+	 * 根据日志更新数据
+	 * @return string
+	 *
+	 */
+	public function autoupdate($param='')
+	{		
+		//start check 检查是否则正在更新数据
+		if(C("DEBUG_MODE")) $this->addLog('check whether is syning....');
+		
+		$model = new SynIngModel();
+		$result = $model->query("select * from syning with(nolock) where type='OA'");
+		
+		if(!$result)
+		{
+			if(C("DEBUG_MODE")) $this->addLog("no syning record");
+			return 'false';
+		}
+		elseif($result[0]["syning"]==1)
+		{
+			if(C("DEBUG_MODE")) $this->addLog("is syinig...");
+			return 'true';
+		}
+						
+		//标记正在同步数据
+		$model->startTrans();
+		$model->execute("update syning set syning = 1 where type='OA'");	
+	
+		//继续同步没更新的数据
+		if(C("DEBUG_MODE")) $this->addLog("resyning no succeed...");
+		$this->synNoSucceed();
+		
+		$this->create();
+		
+		if(C("DEBUG_MODE")) $this->addLog("geting max record:");
+		$model = new SynOAModel();
+		$result = $model->max("recordId");
+		if(!$result)
+			$result = 0;
+		
+		$maxid = $result +1 ;
+		if(C("DEBUG_MODE")) $this->addLog("$maxid:");
+
+		$params = array("maxId"=>$maxid,"opertor"=>"LHK");
+		$result = $this->client->call("GetNoUpdateLogId",array('parameters' =>$params), '', '');
+		$result = $result["GetNoUpdateLogIdResult"];
+		
+		if($result == '-2')
+		{
+			$this->addLog("access denied!");
+			return 'false';
+		}	
+		
+		//开始同步数据
+		if($result)
+		{
+			if(C("DEBUG_MODE")) $this->addLog("starting syning...");
+			$xml = simplexml_load_string($result); 
+			$data = XMLUtil::XML2array($xml);
+			if(!$data)
+			{
+				$this->addLog("no data syn !");
+				$model->execute("update syning set syning = 0 where type='OA'");
+				$model->commit();
+				return 'true';
+			}
+			
+			//列表数组
+			if(!$data["Node"][0])
+			{
+				$temp = $data["Node"];
+				$data = array();
+				$data["Node"][0] = $temp;
+			}
+			
+			if($data["Node"])
+			{
+				for($i=0;$i<count($data["Node"]);$i++)
+				{
+					$propertys = $data["Node"][$i]["property"];
+					$log = $this->getLogInfo($propertys);
+					if(!$log)
+						continue;
+						
+					if(C("DEBUG_MODE")) $this->addLog("$i:".print_r($log,true));
+									
+					$rs = false;
+					//根据objename同步
+					switch(strtoupper($log["ObjectName"]))
+					{
+						case strtoupper('Organ'):
+							$rs = $this->synOrgan($log);
+							break;
+						case strtoupper('Department'):
+							$rs = $this->synDept($log);
+							break;
+						case strtoupper('Employee'):
+							$rs = $this->synMember($log);
+							break;
+						case strtoupper('Position'):
+							$rs = true;
+							break;
+						default:
+							break;
+					}		
+					//插入同步日志
+					if($rs)
+						$log["syn"] = 1;
+					else 
+						$log["syn"] = 0;							
+					$model->add($log);
+					
+				}
+			}
+			//print_r($data["Node"][0]["property"][2]["@attributes"]["name"]);
+		}
+		
+		//标记同步完毕
+		$model->execute("update syning set syning = 0 where type='OA'");
+		$model->commit();
+		
+		if(C("DEBUG_MODE")) $this->addLog("syning finish.");
+		
+		return 'true';
+	}
+	
+	/**
+	 * 继续同步失败记录
+	 *
+	 */
+	private function synNoSucceed()
+	{
+		$this->create();
+		
+		$model = new SynOAModel();
+		$result = $model->findAll("syn=0 and times <10");
+		
+		if(!$result)
+			return true;
+			
+		for($i=0;$i<count($result);$i++)
+		{
+			$log = $result[$i];
+			//根据objename同步
+			switch(strtoupper($log["ObjectName"])) 
+			{
+				case strtoupper('Organ'):
+					$rs = $this->synOrgan($log);
+					break;
+				case strtoupper('Department'):
+					$rs = $this->synDept($log);
+					break;
+				case strtoupper('Employee'):
+					$rs = $this->synMember($log);
+					break;
+				case strtoupper('Position'):
+					$rs = true;
+					break;
+				default:
+					break;
+			}
+			
+			//更新同步日志
+			if($rs)
+			{
+				$log["syn"] = 1;
+			}
+			else 
+			{
+				$log["syn"] = 0;
+				$log["times"] += 1;
+			}
+			//print_r($log);
+			$model->save($log);
+		}
+		
+	}
+	
+	/**
+	 * 获取信息
+	 *
+	 * @param string $data
+	 * @return array
+	 */
+	private function getLogInfo($data)
+	{
+		$result = array();
+		for($i=0;$i<count($data);$i++)
+		{
+			$key = $data[$i]["@attributes"]["name"];
+			$value = $data[$i]["@attributes"]["value"];
+			$result[$key] = $value;
+		}
+		
+		return $result;
+	}
+	
+	
+	/**
+	 * 同步机构
+	 *
+	 * @param string $data
+	 * @return boolean
+	 */
+	private function synOrgan($data)
+	{
+		//id或表明为空,则返回失败
+		if(!$data["ObjectId"] || !$data["ObjectName"])
+			return false;
+				
+		//删除
+		if($data["MethodName"] == '3')
+		{
+			$result = $this->organDelete($data["ObjectId"]);
+			if($result)
+				return true;
+			else 
+				return false;
+		}
+			
+		//获取信息
+		$params = array("orginid"=>$data["ObjectId"]);
+		$result = $this->client->call("GetOrginfo",array('parameters' =>$params), '', '');
+		$result = $result["GetOrginfoResult"];
+		
+		if($result == '-2')
+		{
+			$this->addLog("access denied in synOrgan!");
+			return false;
+		}	
+		
+		//将GBK替换成UTF-8,否则simplexml_load_string会失败
+		$result = str_replace("GBK","utf-8",$result);
+		
+		$xml = simplexml_load_string($result); 
+		$rs = XMLUtil::XML2array($xml);
+		if(!$rs)
+			return false;
+		
+		$info = $this->getLogInfo($rs["Node"]["property"]);
+		
+		//返回值无id,则返回失败
+		if(!$info["OrganId"])
+			return false;
+		
+		//添加
+		if($data["MethodName"] == '1')
+			$result =  $this->organAdd($info);
+		else 
+			$result =  $this->organUpdate($info);
+		
+		//返回值
+		if($result)
+			return true;
+		else 
+			return false;
+	}
+	
+	/**
+	 * 添加组织机构
+	 *
+	 * @param array $data
+	 * @return int $id
+	 */
+	private function organAdd($info)
+	{
+		$model = new DeptModel();
+		
+		$model->__set("Groups",$info["LevelCode"]);
+		$model->__set("DeptNo",$info["LevelCode"]);
+		$model->__set("DeptName",$info["OrganName"]);
+		$model->__set("ShortName",$info["ShortName"]);
+		$model->__set("Address",$info["Address"]);
+		$model->__set("PhoneNo",$info["Tel"]);
+		$model->__set("Fax",$info["Fax"]);
+		$model->__set("ZipCode",$info["Postcode"]);
+		$model->__set("Email",$info["Email"]);
+		$model->__set("ContactMan",$info["ContactMan"]);
+		$model->__set("ContactPhone",$info["ContactTel"]);
+		$model->__set("BillsType","Type1");
+		$model->__set("OutDirect",0);
+		$model->__set("UnuserBardcode",1);
+		$model->__set("Nodetype","N");
+		$model->__set("PHType",1);
+		$model->__set("Type","Organ");
+		$model->__set("OrganId",$info["OrganId"]);
+		$model->__set("ParentId",$info["ParentId"]);
+		$model->__set("RootOrganId",$info["RootOrganId"]);
+		$model->__set("LevelCode",$info["LevelCode"]);
+		
+		//公司
+		$company = $info["LevelCode"];
+		if($info["ParentId"] != '')
+			$company = substr($info["LevelCode"],0,2*$this->length);
+		
+		$model->__set("Company",$company);
+		
+		//父级
+		$upnode = $info["LevelCode"];
+		$upnode = substr($upnode,0,strlen($upnode)-$this->length);
+		$upnode = $upnode?$upnode:'0';
+		$model->__set("Upnode",$upnode);
+		
+		//部门属性
+		$stype = '经营部';
+		if(strlen($info["LevelCode"])==$this->length)
+			$stype = '集团';
+		elseif(strlen($info["LevelCode"]) ==2*$this->length) 
+			$stype = '公司';
+		else 
+			$stype = '分公司';
+		
+		if($info["OrganName"] == '代理公司')
+			$stype = '部门';
+		
+		$model->__set("Stype",$stype);	
+		
+		//添加
+		$result = $model->add();
+		
+		return $result;
+	}
+	
+	/**
+	 * 更新机构
+	 *
+	 * @param array $data
+	 * @return boolean
+	 */
+	private function organUpdate($info)
+	{
+		$model = new DeptModel();
+		
+		$result = $model->find("OrganId = '".$info["OrganId"]."' and Type='Organ'");
+		
+		if(!$result)
+			return false;
+		
+		$data["DeptName"] = $info["OrganName"];
+		$data["ShortName"] = $info["ShortName"];
+		$data["Address"] = $info["Address"];
+		$data["PhoneNo"] = $info["Tel"];
+		$data["Fax"] = $info["Fax"];
+		$data["ZipCode"] = $info["Postcode"];
+		$data["Email"] = $info["Email"];
+		$data["ContactMan"] = $info["ContactMan"];
+		$data["ContactPhone"] = $info["ContactTel"];
+			
+		$result = $model->save($data,"ID = ".$result["ID"]);
+		
+		return $result;
+	}
+	
+	/**
+	 * 删除
+	 *
+	 * @param string $id
+	 * @return boolean
+	 */
+	private function organDelete($id)
+	{
+		$model = new DeptModel();
+		
+		$result = $model->execute("DELETE FROM Dept WHERE OrganId = '$id' and Type = 'Organ'");
+		
+		return $result ;
+	}
+	
+		
+	/**
+	 * 同步部门
+	 * @param string $data
+	 * @return boolean
+	 *
+	 * @param unknown_type $data
+	 */
+	private function synDept($data)
+	{
+		//id或表明为空,则返回失败
+		if(!$data["ObjectId"] || !$data["ObjectName"])
+			return false;
+		
+		//删除
+		if($data["MethodName"] == '3')
+		{
+			$result = $this->deptDelete($data["ObjectId"]);
+			if($result)
+				return true;
+			else 
+				return false;
+		}
+			
+		//获取信息
+		$params = array("deptid"=>$data["ObjectId"]);
+		$result = $this->client->call("GetDepartmentById",array('parameters' =>$params), '', '');
+		$result = $result["GetDepartmentByIdResult"];
+		
+		if($result == '-2')
+		{
+			$this->addLog("access denied in synDept!");
+			return false;
+		}	
+		
+		//将GBK替换成UTF-8,否则simplexml_load_string会失败
+		$result = str_replace("GBK","utf-8",$result);
+		
+		$xml = simplexml_load_string($result); 
+		$rs = XMLUtil::XML2array($xml);
+		if(!$rs)
+			return false;
+		
+		$info = $this->getLogInfo($rs["Node"]["property"]);
+	
+		//返回值无id,则返回失败
+		if(!$info["DeptId"])
+			return false;
+		
+		//添加
+		if($data["MethodName"] == '1')
+			$result =  $this->deptAdd($info);
+		else 
+			$result =  $this->deptUpdate($info);
+		
+		//返回值
+		if($result)
+			return true;
+		else 
+			return false;
+	}
+	
+	/**
+	 * 添加部门
+	 *
+	 * @param array $data
+	 * @return int $id
+	 */
+	private function deptAdd($info)
+	{
+		$model = new DeptModel();
+				
+		$data["DeptName"] = $info["DeptName"];
+		$data["ShortName"] = '';
+		$data["PhoneNo"] = $info["Tel"];
+		$data["Fax"] = $info["Fax"];
+		$data["BillsType"] = "Type1";
+		$data["OutDirect"] = 0;
+		$data["UnuserBardcode"] = 1;
+		$data["Nodetype"] = "N";
+		$data["PHType"] = 1;
+		$data["Type"] = "Department";
+		$data["OrganId"] = $info["OrganId"];
+		$data["DeptId"] = $info["DeptId"];
+		$data["ParentId"] = $info["ParentId"];
+		$data["RootOrganId"] = $info["RootOrganId"];
+		$model->__set("LevelCode",$info["LevelCode"]);
+		
+		//如果部门有parentid,则获取上级部门信息,否则获取上级机构信息
+		if($info["ParentId"] != '')
+		{
+			$parent = $model->find("DeptId = '".$info["ParentId"]."'");
+			if(!$parent)
+			{
+				//echo "dept-no parent dept:".$info["ParentId"]."<br>";
+				return false;
+			}
+			$deptno = $parent["DeptNo"].$info["LevelCode"];
+		}
+		else 
+		{
+			$parent = $model->find("OrganId = '".$info["OrganId"]."'");
+			if(!$parent)
+			{
+				//echo "dept-no parent organ:".$info["OrganId"]."<br>";
+				return false;
+			}
+			$deptno = $parent["DeptNo"].'0'.$info["LevelCode"];
+		}
+				
+		$company = $parent["Company"];
+		$upnode = $parent["DeptNo"];
+		$stype = '经营部';
+		
+		$data["DeptNo"] = $deptno;
+		$data["Company"] = $company;
+		$data["Groups"] = $deptno;
+		$data["Upnode"] = $upnode;
+		$data["Stype"] = $stype;
+		
+		
+		//添加
+		$result = $model->add($data);
+		
+		return $result;
+	}
+	
+	/**
+	 * 更新部门
+	 *
+	 * @param array $data
+	 * @return boolean
+	 */
+	private function deptUpdate($info)
+	{
+		$model = new DeptModel();
+		
+		$result = $model->find("DeptId = '".$info["DeptId"]."' and Type = 'Department'");
+		
+		$data["DeptName"] = $info["DeptName"];
+		$data["ShortName"] = '';
+		$data["PhoneNo"] = $info["Tel"];
+		$data["Fax"] = $info["Fax"];
+								
+		$result = $model->save($data,"ID = ".$result["ID"]);
+		
+		return $result;
+	}
+	
+	/**
+	 * 删除
+	 *
+	 * @param string $id
+	 * @return boolean
+	 */
+	private function deptDelete($id)
+	{
+		$model = new DeptModel();
+		
+		$result = $model->execute("DELETE FROM Dept WHERE DeptId = '$id' and Type = 'Department'");
+		
+		return $result ;
+	}
+	
+	
+	/**
+	 * 同步员工
+	 *
+	 * @param string $data
+	 * @return boolean
+	 */
+	private function synMember($data)
+	{
+		//id或表明为空,则返回失败
+		if(!$data["ObjectId"] || !$data["ObjectName"])
+			return false;
+		
+		//删除
+		if($data["MethodName"] == '3')
+		{
+			$result = $this->memberDelete($data["ObjectId"]);
+			if($result)
+				return true;
+			else 
+				return false;
+		}
+		//获取信息
+		$params = array("userid"=>$data["ObjectId"]);
+		$result = $this->client->call("GetUsersInfoById",array('parameters' =>$params), '', '');
+		$result = $result["GetUsersInfoByIdResult"];
+		
+		if($result == '-2')
+		{
+			$this->addLog("access denied in synMember!");
+			return false;
+		}	
+			
+		//将GBK替换成UTF-8,否则simplexml_load_string会失败
+		$result = str_replace("GBK","utf-8",$result);
+		
+		$xml = simplexml_load_string($result); 
+		$rs = XMLUtil::XML2array($xml);
+		if(!$rs)
+			return false;
+		
+		$info = $this->getLogInfo($rs["Node"]["property"]);
+				
+		//返回值无id,则返回失败
+		if(!$info["DeptId"])
+			return false;
+			
+		//添加
+		if($data["MethodName"] == '1')
+			$result =  $this->memberAdd($info);
+		else 
+			$result =  $this->memberUpdate($info);
+		
+		//返回值
+		if($result)
+			return true;
+		else 
+			return false;
+	}
+	
+	/**
+	 * 添加员工
+	 *
+	 * @param array $data
+	 * @return int $id
+	 */
+	private function memberAdd($info)
+	{
+		$data["UserNo"] = $info["EmployeeId"];
+		$data["UserName"] = $info["Name"];
+		$data["LoginName"] = $info["LoginName"];
+		$data["Password"] = "0000";
+		$data["Verify"] = "%";
+		$data["Mobil"] = $info["Mobile"];
+		$data["Nodetype"] = "x";
+		$data["OrganId"] = $info["OrganId"];
+		$data["DeptId"] = $info["DeptId"];
+		$data["UserId"] = $info["UserId"];
+		
+		$model = new DeptModel();
+		if($info["DeptId"])
+		{
+			$result = $model->find("DeptId = '".$info["DeptId"]."' and Type ='Department'");
+			if(!$result)
+			{
+				$this->addLog("member-no parent dept:".$info["DeptId"]);
+				return false;
+			}
+		}
+		else 
+		{
+			$result = $model->find("OrganId = '".$info["OrganId"]."' and Type ='Organ'");
+			if(!$result)
+			{
+				$this->addLog("member-no organ organ:".$info["OrganId"]);
+				return false;
+			}
+		}
+		
+		$data["Upnode"] = $result["DeptNo"];
+
+		$model = new MemberModel();
+		
+		//添加
+		$result = $model->add($data);
+		
+		return $result;
+	}
+	
+	/**
+	 * 更新部门
+	 *
+	 * @param array $data
+	 * @return boolean
+	 */
+	private function memberUpdate($info)
+	{
+		$model = new MemberModel();
+		
+		$result = $model->find("UserNo = '".$info["EmployeeId"]."'");
+		if(!$result)
+			return false;
+		
+		$data["UserNo"] = $info["EmployeeId"];
+		$data["UserName"] = $info["Name"];
+		$data["LoginName"] = $info["LoginName"];
+		$data["Mobil"] = $info["Mobile"];
+		
+		$result = $model->save($data,"ID = ".$result["ID"]);
+		
+		return $result;
+	}
+	
+	/**
+	 * 删除
+	 *
+	 * @param string $id
+	 * @return boolean
+	 */
+	private function memberDelete($id)
+	{
+		$model = new MemberModel();
+		
+		$result = $model->execute("DELETE FROM Member WHERE UserNo = '$id' ");
+		
+		return $result ;
+	}
+	
+	/**
+	 * 记录日志
+	 *
+	 * @param string $data
+	 */
+	private function addLog($data)
+	{
+		Log::record($data,WEB_LOG_DEBUG);
+		return ;
+	}
+	
+	/**
+	 * 写日志文件
+	 *
+	 */
+	function __destruct()
+	{
+		Log::save();
+	}
+	
+}
+?>
