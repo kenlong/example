@@ -1,8 +1,10 @@
 .settings
 .buildpath
 .project
+\APP\Cache\*
 APP\Logs\*
 APP\Temp\*
 \GuoyaoSOAP\Runtime\*
+\StocksAPP\Cache\*
 \StocksAPP\Logs\*
 \StocksAPP\Temp\*
